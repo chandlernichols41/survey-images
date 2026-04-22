@@ -334,7 +334,7 @@ function render() {
     return;
   }
   grid.innerHTML = filtered.map((p, i) => `
-    <div class="card" onclick="open(${i})">
+    <div class="card" onclick="showPair(${i})">
       <div class="pair-row">
         <span class="s">${cap(p.s)}</span>
         <span class="arrow">→</span>
@@ -353,7 +353,7 @@ function filter() {
   render();
 }
 
-function open(i) {
+function showPair(i) {
   const p = filtered[i];
   document.getElementById('modal-title').textContent = `"${cap(p.s)}" vs "${cap(p.w)}" — ${p.ctx}`;
   document.getElementById('simg').src = BASE + p.sf;
