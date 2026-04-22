@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adjective Intensity Norms — Image Gallery</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f4f4;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #73000a;
+      color: white;
+      padding: 1.25rem 1.5rem;
+      text-align: center;
+    }
+    header h1 { font-size: 1.4rem; font-weight: 700; }
+    header p { font-size: 0.85rem; opacity: 0.85; margin-top: 0.3rem; }
+
+    .search-bar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .search-bar input {
+      flex: 1;
+      padding: 0.55rem 1rem;
+      border: 2px solid #73000a;
+      border-radius: 25px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+    .qr-btn {
+      background: #73000a;
+      color: white;
+      border: none;
+      padding: 0.55rem 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+    .qr-btn:hover { background: #5a0008; }
+
+    .count-bar {
+      padding: 0.4rem 1rem;
+      font-size: 0.8rem;
+      color: #777;
+      background: #fafafa;
+      border-bottom: 1px solid #eee;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 0.6rem;
+      padding: 0.75rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 0.7rem 0.9rem;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: border-color 0.15s, box-shadow 0.15s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+    .card:hover { border-color: #73000a; box-shadow: 0 3px 10px rgba(115,0,10,0.15); }
+    .card .pair-row { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.2rem; }
+    .card .s { font-weight: 700; color: #73000a; font-size: 0.95rem; }
+    .card .arrow { color: #bbb; font-size: 0.75rem; }
+    .card .w { color: #555; font-size: 0.95rem; }
+    .card .ctx { font-size: 0.72rem; color: #aaa; margin-top: 0.2rem; }
+
+    .no-results {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem;
+      color: #aaa;
+    }
+
+    /* ─── Modal ─── */
+    .overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 100;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    .overlay.show { display: flex; align-items: flex-start; justify-content: center; }
+    .modal {
+      background: white;
+      border-radius: 12px;
+      max-width: 820px;
+      width: 100%;
+      margin-top: 2rem;
+      overflow: hidden;
+      animation: pop 0.18s ease;
+    }
+    @keyframes pop { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    .modal-head {
+      background: #73000a;
+      color: white;
+      padding: 0.9rem 1.2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-head h2 { font-size: 1rem; }
+    .close {
+      background: none; border: none; color: white;
+      font-size: 1.6rem; cursor: pointer; line-height: 1; padding: 0;
+    }
+    .modal-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: #eee;
+    }
+    .img-pane {
+      background: white;
+      padding: 1.2rem;
+      text-align: center;
+    }
+    .img-pane img {
+      max-width: 100%;
+      max-height: 280px;
+      object-fit: contain;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+    .img-pane .adj {
+      margin-top: 0.65rem;
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+    .img-pane.strong-pane .adj { color: #73000a; }
+    .img-pane.weak-pane .adj { color: #444; }
+    .img-pane .intensity {
+      font-size: 0.75rem;
+      color: #999;
+      margin-top: 0.15rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ─── QR overlay ─── */
+    .qr-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    .qr-overlay.show { display: flex; }
+    .qr-box {
+      background: white;
+      border-radius: 16px;
+      padding: 2rem;
+      text-align: center;
+      max-width: 320px;
+      width: 90%;
+    }
+    .qr-box h3 { font-size: 1.1rem; margin-bottom: 1rem; color: #73000a; }
+    .qr-box p { font-size: 0.8rem; color: #888; margin-top: 0.75rem; line-height: 1.4; }
+    .qr-close {
+      margin-top: 1rem;
+      background: #73000a;
+      color: white;
+      border: none;
+      padding: 0.5rem 1.5rem;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+    #qrcode { margin: 0 auto; }
+
+    @media (max-width: 520px) {
+      .modal-body { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Adjective Intensity Norms</h1>
+  <p>Tap a pair to see how the same scene looks with strong vs. weak adjectives</p>
+</header>
+
+<div class="search-bar">
+  <input type="text" id="search" placeholder="Search adjectives or context…" oninput="filter()">
+  <button class="qr-btn" onclick="showQR()">QR Code</button>
+</div>
+<div class="count-bar" id="count"></div>
+
+<div class="grid" id="grid"></div>
+
+<!-- Image Modal -->
+<div class="overlay" id="overlay" onclick="maybeClose(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <h2 id="modal-title"></h2>
+      <button class="close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body">
+      <div class="img-pane strong-pane">
+        <img id="simg" src="" alt="">
+        <div class="adj" id="sadj"></div>
+        <div class="intensity">Strong intensity</div>
+      </div>
+      <div class="img-pane weak-pane">
+        <img id="wimg" src="" alt="">
+        <div class="adj" id="wadj"></div>
+        <div class="intensity">Weak intensity</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- QR Overlay -->
+<div class="qr-overlay" id="qr-overlay" onclick="closeQR(event)">
+  <div class="qr-box">
+    <h3>Scan to Open</h3>
+    <div id="qrcode"></div>
+    <p>Scan this QR code to open the image gallery on your phone.</p>
+    <button class="qr-close" onclick="closeQR()">Close</button>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const BASE = "https://raw.githubusercontent.com/chandlernichols41/survey-images/main/";
+const SITE = "https://chandlernichols41.github.io/survey-images/";
+
+const pairs = [
+  { s:"ancient",        w:"old",          ctx:"road",          sf:"adjnorm_strong_ancient_road_pic.png",              wf:"adjnorm_weak_old_road_pic.png" },
+  { s:"angry",          w:"annoyed",       ctx:"persons",       sf:"adjnorm_strong_angry_persons_pic.png",             wf:"adjnorm_weak_annoyed_persons_pic.png" },
+  { s:"bad",            w:"mediocre",      ctx:"attendance",    sf:"adjnorm_strong_bad_attendence_pic.png",            wf:"adjnorm_weak_mediocre_attendence_pic.png" },
+  { s:"bent",           w:"askew",         ctx:"lamp pole",     sf:"adjnorm_strong_bent_lpole_pic.png",                wf:"adjnorm_weak_akew_lpole_pic.png" },
+  { s:"blinding",       w:"bright",        ctx:"light",         sf:"adjnorm_strong_blinding_light_pic.png",            wf:"adjnorm_weak_bright_light_pic.png" },
+  { s:"brilliant",      w:"intelligent",   ctx:"report card",   sf:"adjnorm_strong_brilliant_reportc_pic.png",         wf:"adjnorm_weak_intelligent_reportc_pic.png" },
+  { s:"broken",         w:"damaged",       ctx:"bridge",        sf:"adjnorm_strong_broken_bridge_pic.png",             wf:"adjnorm_weak_damaged_bridge_pic.png" },
+  { s:"certain",        w:"possible",      ctx:"agreement",     sf:"adjnorm_strong_certain_agreement_pic.png",         wf:"adjnorm_weak_possible_agreement_pic.png" },
+  { s:"certain",        w:"likely",        ctx:"weather",       sf:"adjnorm_strong_certain_rweather_pic.jpg",          wf:"adjnorm_weak_likely_rweather_pic.jpg" },
+  { s:"cheap",          w:"affordable",    ctx:"bag",           sf:"adjnorm_strong_cheap_bag_pic.png",                 wf:"adjnorm_weak_affordable_bag_pic.png" },
+  { s:"cold",           w:"cool",          ctx:"report",        sf:"adjnorm_strong_cold_report_pic.png",               wf:"adjnorm_weak_cool_report_pic.png" },
+  { s:"cramped",        w:"snug",          ctx:"cargo",         sf:"adjnorm_strong_cramped_cargo_pic.png",             wf:"adjnorm_weak_snug_cargo_pic.png" },
+  { s:"crystal clear",  w:"transparent",   ctx:"bag",           sf:"adjnorm_strong_crystal_ebag_pic.png",              wf:"adjnorm_weak_transparent_ebag_pic.png" },
+  { s:"dark",           w:"dim",           ctx:"photo",         sf:"adjnorm_strong_dark_photo_pic.png",                wf:"adjnorm_weak_dim_photo_pic.png" },
+  { s:"deafening",      w:"loud",          ctx:"construction",  sf:"adjnorm_strong_defeaning_construction_pic.png",    wf:"adjnorm_weak_loud_construction_pic.png" },
+  { s:"delicious",      w:"edible",        ctx:"spaghetti",     sf:"adjnorm_strong_delicious_spaghetti_pic.png",       wf:"adjnorm_weak_edible_spaghetti_pic.png" },
+  { s:"delicious",      w:"tasty",         ctx:"soup",          sf:"adjnorm_strong_delicous_soup_pic.png",             wf:"adjnorm_weak_tasty_soup_pic.png" },
+  { s:"delighted",      w:"happy",         ctx:"people",        sf:"adjnorm_strong_delighted_people_pic.png",          wf:"adjnorm_weak_happy_people_pic.png" },
+  { s:"depleted",       w:"low",           ctx:"oil",           sf:"adjnorm_strong_depleted_oil_pic.png",              wf:"adjnorm_weak_low_oil_pic.png" },
+  { s:"drowsy",         w:"sleepy",        ctx:"yawn",          sf:"adjnorm_strong_drowsy_yawn_pic.png",               wf:"adjnorm_weak_sleepy_yawn_pic.png" },
+  { s:"drunk",          w:"tipsy",         ctx:"driver",        sf:"adjnorm_strong_drunk_driver_pic.png",              wf:"adjnorm_weak_tipsy_driver_pic.png" },
+  { s:"dying",          w:"ill",           ctx:"patient",       sf:"adjnorm_strong_dying_patient_pic.png",             wf:"adjnorm_weak_ill_patient_pic.png" },
+  { s:"enormous",       w:"big",           ctx:"parking lot",   sf:"adjnorm_strong_enormous_parking_pic.png",          wf:"adjnorm_weak_big_parking_pic.png" },
+  { s:"excellent",      w:"good",          ctx:"plan",          sf:"adjnorm_strong_excellent_plan_pic.png",            wf:"adjnorm_weak_good_plan_pic.png" },
+  { s:"exhausted",      w:"tired",         ctx:"planner",       sf:"adjnorm_strong_exhausted_planner_pic.png",         wf:"adjnorm_weak_tired_planner_pic.png" },
+  { s:"extinct",        w:"endangered",    ctx:"habitat",       sf:"adjnorm_strong_extinct_habitat_pic.png",           wf:"adjnorm_weak_endangered_habitat_pic.png" },
+  { s:"extraordinary",  w:"special",       ctx:"check",         sf:"adjnorm_strong_extraordinary_check_pic.png",       wf:"adjnorm_weak_special_check_pic.png" },
+  { s:"fat",            w:"chubby",        ctx:"kid",           sf:"adjnorm_strong_fat_kid_pic.png",                   wf:"adjnorm_weak_chubby_kid_pic.png" },
+  { s:"filthy",         w:"dirty",         ctx:"river",         sf:"adjnorm_strong_filthy_river_pic.png",              wf:"adjnorm_weak_dirty_river_pic.png" },
+  { s:"freezing",       w:"cold",          ctx:"apartment",     sf:"adjnorm_strong_freezing_appartment_pic.png",       wf:"adjnorm_weak_cold_appartment_pic.png" },
+  { s:"gigantic",       w:"large",         ctx:"skyscraper",    sf:"adjnorm_strong_gigantic_sbuilding_pic.png",        wf:"adjnorm_weak_large_sbuilding_pic.png" },
+  { s:"gone",           w:"scarce",        ctx:"supplies",      sf:"adjnorm_strong_gone_supplies_pic.png",             wf:"adjnorm_weak_scarse_supplies_pic.png" },
+  { s:"good",           w:"adequate",      ctx:"equipment",     sf:"adjnorm_strong_good_equipment_pic.png",            wf:"adjnorm_weak_adeqeuate_equipment_pic.png" },
+  { s:"gorgeous",       w:"pretty",        ctx:"garden",        sf:"adjnorm_strong_gorgeous_garden_pic.png",           wf:"adjnorm_weak_pretty_garden_pic.png" },
+  { s:"happy",          w:"content",       ctx:"folk",          sf:"adjnorm_strong_happy_folk_pic.png",                wf:"adjnorm_weak_content_folk_pic.png" },
+  { s:"hideous",        w:"ugly",          ctx:"building",      sf:"adjnorm_strong_hideous_building_pic.png",          wf:"adjnorm_weak_ugly_building_pic.png" },
+  { s:"hilarious",      w:"funny",         ctx:"talker",        sf:"adjnorm_strong_hilarious_talker_pic.png",          wf:"adjnorm_weak_funny_talker_pic.png" },
+  { s:"horrific",       w:"unsettling",    ctx:"graph",         sf:"adjnorm_strong_horrific_graph_pic.png",            wf:"adjnorm_weak_unsettling_graph_pic.png" },
+  { s:"hot",            w:"warm",          ctx:"temperature",   sf:"adjnorm_strong_hot_temp_pic.png",                  wf:"adjnorm_weak_warm_temp_pic.png" },
+  { s:"idiotic",        w:"foolish",       ctx:"bus driver",    sf:"adjnorm_strong_idiotic_busdriver_pic.jpg",         wf:"adjnorm_weak_foolish_busdriver_pic.jpg" },
+  { s:"ill",            w:"sick",          ctx:"candidate",     sf:"adjnorm_strong_ill_vcandidate_pic.png",            wf:"adjnorm_weak_sick_vcandidate_pic.png" },
+  { s:"impeccable",     w:"satisfactory",  ctx:"jeep",          sf:"adjnorm_strong_impeccable_jeep_pic.png",           wf:"adjnorm_weak_satisfactory_jeep_pic.png" },
+  { s:"impossible",     w:"difficult",     ctx:"task",          sf:"adjnorm_strong_impossible_task_pic.png",           wf:"adjnorm_weak_difficult_task_pic.png" },
+  { s:"impoverished",   w:"poor",          ctx:"place",         sf:"adjnorm_strong_impoverished_place_pic.png",        wf:"adjnorm_weak_poor_place_pic.png" },
+  { s:"inaudible",      w:"quiet",         ctx:"radio",         sf:"adjnorm_strong_inaudible_radio_pic.png",           wf:"adjnorm_weak_quiet_radio_pic.png" },
+  { s:"miserable",      w:"unhappy",       ctx:"union",         sf:"adjnorm_strong_miserable_union_pic.png",           wf:"adjnorm_weak_unhappy_union_pic.png" },
+  { s:"nasty",          w:"unkind",        ctx:"speaker",       sf:"adjnorm_strong_nasty_speaker_pic.png",             wf:"adjnorm_weak_unkind_speaker_pic.png" },
+  { s:"nonfunctional",  w:"nonfaulty",     ctx:"poll",          sf:"adjnorm_strong_nonfunctional_poll_pic.png",        wf:"adjnorm_weak_nonfaulty_poll_pic.png" },
+  { s:"obese",          w:"fat",           ctx:"guy",           sf:"adjnorm_strong_obese_guy_pic.png",                 wf:"adjnorm_weak_fat_guy_pic.png" },
+  { s:"obligatory",     w:"encouraged",    ctx:"safety",        sf:"adjnorm_strong_obligatory_safety_pic.png",         wf:"adjnorm_weak_encourage_safety_pic.png" },
+  { s:"open",           w:"ajar",          ctx:"door",          sf:"adjnorm_strong_open_door_pic.png",                 wf:"adjnorm_weak_ajar_door_pic.png" },
+  { s:"parched",        w:"dry",           ctx:"field",         sf:"adjnorm_strong_parched_field_pic.png",             wf:"adjnorm_weak_dry_field_pic.png" },
+  { s:"perfect",        w:"great",         ctx:"team",          sf:"adjnorm_strong_perfect_team_pic.png",              wf:"adjnorm_weak_great_team_pic.png" },
+  { s:"petrified",      w:"scared",        ctx:"voters",        sf:"adjnorm_strong_petrified_voters_pic.png",          wf:"adjnorm_weak_scared_voters_pic.png" },
+  { s:"plastered",      w:"drunk",         ctx:"worker",        sf:"adjnorm_strong_plastered_worker_pic.png",          wf:"adjnorm_weak_drunk_worker_pic.png" },
+  { s:"pouring",        w:"rainy",         ctx:"rally",         sf:"adjnorm_strong_pouring_rally_pic.png",             wf:"adjnorm_weak_rainy_rally_pic.png" },
+  { s:"ridiculous",     w:"silly",         ctx:"candidate",     sf:"adjnorm_strong_ridiculous_candidate_pic.png",      wf:"adjnorm_weak_silly_candidate_pic.png" },
+  { s:"scalding",       w:"hot",           ctx:"coffee",        sf:"adjnorm_strong_scalding_coffee_pic.png",           wf:"adjnorm_weak_hot_coffee_pic.png" },
+  { s:"scared",         w:"wary",          ctx:"travellers",    sf:"adjnorm_strong_scared_travellers_pic.png",         wf:"adjnorm_weak_wary_travellers_pic.png" },
+  { s:"serene",         w:"calm",          ctx:"soldier",       sf:"adjnorm_strong_serene_soldier_pic.png",            wf:"adjnorm_weak_calm_soldier_pic.png" },
+  { s:"skinny",         w:"thin",          ctx:"person",        sf:"adjnorm_strong_skinny_dude_pic.png",               wf:"adjnorm_weak_thin_dude_pic.png" },
+  { s:"soaked",         w:"wet",           ctx:"paper pile",    sf:"adjnorm_strong_soaked_paperpile_pic.png",          wf:"adjnorm_weak_wet_paperpile_pic.png" },
+  { s:"spotless",       w:"clean",         ctx:"warehouse",     sf:"adjnorm_strong_spotless_warehouse_pic.png",        wf:"adjnorm_weak_clean_warehouse_pic.png" },
+  { s:"starving",       w:"hungry",        ctx:"family",        sf:"adjnorm_strong_starving_fam_pic.png",              wf:"adjnorm_weak_hungry_fam_pic.png" },
+  { s:"sterile",        w:"clean",         ctx:"table",         sf:"adjnorm_strong_sterile_table_pic.png",             wf:"adjnorm_weak_clean_table_pic.png" },
+  { s:"stunning",       w:"attractive",    ctx:"dress",         sf:"adjnorm_strong_stunning_dress_pic.png",            wf:"adjnorm_weak_attractive_dress_pic.png" },
+  { s:"tiny",           w:"small",         ctx:"field goal",    sf:"adjnorm_strong_tiny_fgoal_pic.png",                wf:"adjnorm_weak_small_fgoal_pic.png" },
+  { s:"unforgettable",  w:"memorable",     ctx:"celebration",   sf:"adjnorm_strong_unforgettable_celebration_pic.png", wf:"adjnorm_weak_memorable_celebration_pic.png" },
+  { s:"unsolvable",     w:"hard",          ctx:"test",          sf:"adjnorm_strong_unsolvable_test_pic.png",           wf:"adjnorm_weak_hard_test_pic.png" },
+  { s:"wet",            w:"damp",          ctx:"carpet",        sf:"adjnorm_strong_wet_carpet_pic.png",                wf:"adjnorm_weak_damp_carpet_pic.png" },
+];
+
+let filtered = pairs;
+
+function cap(str) { return str.charAt(0).toUpperCase() + str.slice(1); }
+
+function render() {
+  const grid = document.getElementById('grid');
+  document.getElementById('count').textContent =
+    filtered.length === pairs.length
+      ? `${pairs.length} adjective pairs`
+      : `${filtered.length} of ${pairs.length} pairs`;
+
+  if (!filtered.length) {
+    grid.innerHTML = '<div class="no-results">No matching adjectives found.</div>';
+    return;
+  }
+  grid.innerHTML = filtered.map((p, i) => `
+    <div class="card" onclick="open(${i})">
+      <div class="pair-row">
+        <span class="s">${cap(p.s)}</span>
+        <span class="arrow">→</span>
+        <span class="w">${cap(p.w)}</span>
+      </div>
+      <div class="ctx">${p.ctx}</div>
+    </div>
+  `).join('');
+}
+
+function filter() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  filtered = q
+    ? pairs.filter(p => p.s.includes(q) || p.w.includes(q) || p.ctx.includes(q))
+    : pairs;
+  render();
+}
+
+function open(i) {
+  const p = filtered[i];
+  document.getElementById('modal-title').textContent = `"${cap(p.s)}" vs "${cap(p.w)}" — ${p.ctx}`;
+  document.getElementById('simg').src = BASE + p.sf;
+  document.getElementById('wimg').src = BASE + p.wf;
+  document.getElementById('sadj').textContent = cap(p.s);
+  document.getElementById('wadj').textContent = cap(p.w);
+  document.getElementById('overlay').classList.add('show');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('overlay').classList.remove('show');
+  document.body.style.overflow = '';
+}
+
+function maybeClose(e) {
+  if (e.target === document.getElementById('overlay')) closeModal();
+}
+
+let qrGenerated = false;
+function showQR() {
+  document.getElementById('qr-overlay').classList.add('show');
+  if (!qrGenerated) {
+    new QRCode(document.getElementById('qrcode'), {
+      text: SITE,
+      width: 200,
+      height: 200,
+      colorDark: '#73000a',
+      colorLight: '#ffffff',
+    });
+    qrGenerated = true;
+  }
+}
+
+function closeQR(e) {
+  if (!e || e.target === document.getElementById('qr-overlay') || e.target.classList.contains('qr-close')) {
+    document.getElementById('qr-overlay').classList.remove('show');
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeQR(); } });
+
+render();
+</script>
+</body>
+</html>
