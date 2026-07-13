@@ -121,14 +121,10 @@ const instructions = [
         <p>On each screen you will see <b>one descriptive word</b> and <b>three images</b> of the
            same thing. Your job is to <b>click the single image that best represents the meaning
            of the word</b>.</p>
-        <p>The three images show the same scene at different intensities:</p>
-        <ul>
-          <li>a <b>plain / neutral</b> version,</li>
-          <li>a <b>mild</b> version, and</li>
-          <li>an <b>extreme</b> version.</li>
-        </ul>
-        <p>You will do this for <b>65 words</b>. Look carefully &mdash; the images are similar and
-           differ in important ways.</p>
+        <p>The three images are similar but differ in important ways. Look carefully and pick the
+           one you feel best fits the word.</p>
+        <p>You will do this for <b>65 words</b>. There are no trick questions &mdash; we just want
+           your honest judgment.</p>
       </div>`,
     choices: ["Next"],
     data: { screen: "instructions_1" }
@@ -162,7 +158,7 @@ function exampleScreen({ title, word, imgs, correctRole, explanation }) {
   return {
     type: jsPsychHtmlButtonResponse,
     stimulus: `
-      <div class="screen-narrow">
+      <div class="screen-wide">
         <h2>${title}</h2>
         <p style="text-align:center;">The word is <span class="ex-tag">example</span></p>
         <div class="adj-word" style="text-align:center;">${word}</div>
@@ -178,22 +174,22 @@ function buildExamples() {
   const S = CONFIG.EXAMPLE_IMAGES.speed;
   const H = CONFIG.EXAMPLE_IMAGES.height;
   return [
-    // Shown FIRST — the extreme image genuinely is the best fit.
+    // Shown FIRST — the strongest image genuinely is the best fit.
     exampleScreen({
       title: "Example 1 of 2",
       word: "fast", imgs: S, correctRole: "strong",
-      explanation: `For &ldquo;fast,&rdquo; the <b>most extreme</b> image (the speeding car) is the
-        best match. Sometimes the strongest picture genuinely is the right choice &mdash; the parked
-        car isn&rsquo;t moving, and the middle car is only going a normal pace.`
+      explanation: `The best match for &ldquo;fast&rdquo; is the <b>highlighted</b> image &mdash; the
+        car that is clearly speeding. The other two cars (one parked, one going a normal pace) are
+        not going fast. <b>Sometimes the strongest image genuinely is the right choice.</b>`
     }),
-    // Shown SECOND — the middle image is the best fit, not the extreme one.
+    // Shown SECOND — a strong image is NOT the best fit.
     exampleScreen({
       title: "Example 2 of 2",
       word: "tall", imgs: H, correctRole: "weak",
-      explanation: `For &ldquo;tall,&rdquo; the best match is the <b>middle</b> image &mdash; not the
-        most extreme one. The tallest figure is better described as <i>really tall</i> or a
-        <i>giant</i>, so it goes beyond plain &ldquo;tall.&rdquo; <b>Here the strongest image is not
-        the right choice.</b>`
+      explanation: `The best match for &ldquo;tall&rdquo; is the <b>highlighted</b> figure. Notice it
+        is <i>not</i> the tallest one &mdash; the tallest figure is better described as a
+        <i>giant</i>, which goes beyond plain &ldquo;tall.&rdquo; <b>Sometimes the strongest image is
+        not the right choice.</b>`
     })
   ];
 }
