@@ -20,7 +20,11 @@ function shuffle(arr) {
 function imgURL(file) { return CONFIG.IMAGE_BASE_URL + file; }
 
 /* ---------- participant / session identifiers ----------------------------- */
+// From the URL (?id=... — this is what SONA will pass). Empty if launched plainly.
 const SONA_ID = getParam("id") || getParam("sona_id") || getParam("survey_code") || "";
+// The working participant id: the URL id if present, otherwise typed in on the
+// ID-entry screen below. Used for the saved filename and stamped on every row.
+let participantId = SONA_ID;
 
 /* ---------- jsPsych init -------------------------------------------------- */
 const jsPsych = initJsPsych({
@@ -280,11 +284,31 @@ async function main() {
 
   // participant-level columns written on every row
   jsPsych.data.addProperties({
+    participant_id: participantId,
     sona_id: SONA_ID,
     version: version,
     study: "adjnorm_forced_choice",
     user_agent: navigator.userAgent
   });
+
+  // ID-entry screen: only shown when the link did NOT carry an id (?id=...).
+  // When SONA is added later it passes ?id=, so this screen is skipped and the
+  // SONA code is used automatically.
+  const idEntry = {
+    type: jsPsychSurveyText,
+    preamble: `<div class="screen-narrow"><h2>Participant ID</h2>
+        <p>Please enter your participant ID below. If you were not given one, enter your
+           initials followed by today&rsquo;s date (e.g. <i>CN0714</i>).</p></div>`,
+    questions: [{ prompt: "Participant ID:", name: "pid", required: true }],
+    button_label: "Continue",
+    data: { screen: "id_entry" },
+    on_finish: (data) => {
+      const typed = (data.response && data.response.pid ? String(data.response.pid) : "").trim();
+      if (typed) participantId = typed;
+      // stamp the id onto every row (existing and future)
+      jsPsych.data.addProperties({ participant_id: participantId, sona_id: participantId });
+    }
+  };
 
   const timeline = [];
 
@@ -305,6 +329,7 @@ async function main() {
   });
 
   timeline.push(consent);
+  if (!SONA_ID) timeline.push(idEntry);   // ask for an id only if none came in the link
   timeline.push(screener);
   instructions.forEach(s => timeline.push(s));
   if (CONFIG.EXAMPLES_ENABLED) buildExamples().forEach(s => timeline.push(s));
@@ -313,7 +338,9 @@ async function main() {
   trials.forEach((t, i) => timeline.push(buildTrial(t, i, trials.length)));
 
   // --- save to DataPipe/OSF -------------------------------------------------
-  const filename = `${SONA_ID || "anon"}_v${version}_${Date.now()}.csv`;
+  // Filename is built at save time so it reflects the id entered on the ID screen.
+  const makeFilename = () =>
+    `${(participantId || "anon").replace(/[^A-Za-z0-9_-]/g, "")}_v${version}_${Date.now()}.csv`;
   const saveConfigured =
     CONFIG.DATAPIPE_EXPERIMENT_ID && CONFIG.DATAPIPE_EXPERIMENT_ID !== "FILL_ME";
 
@@ -322,7 +349,7 @@ async function main() {
       type: jsPsychPipe,
       action: "save",
       experiment_id: CONFIG.DATAPIPE_EXPERIMENT_ID,
-      filename: filename,
+      filename: makeFilename,
       data_string: () => jsPsych.data.get().csv(),
       data: { screen: "save" }
     });
@@ -338,7 +365,7 @@ async function main() {
       data: { screen: "debug_save" },
       on_finish: () => {
         console.log(jsPsych.data.get().csv());
-        jsPsych.data.get().localSave("csv", filename);
+        jsPsych.data.get().localSave("csv", makeFilename());
       }
     });
   }
