@@ -1,0 +1,3365 @@
+{
+  "base_url": "https://chandlernichols41.github.io/survey-images/",
+  "versions": {
+    "1": [
+      {
+        "type": "experimental",
+        "pair": "ancient-old",
+        "scene": "road",
+        "adj_shown": "ancient",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_old_ancient_road_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_old_road_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ancient_road_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "angry-annoyed",
+        "scene": "persons",
+        "adj_shown": "annoyed",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_annoyed_angry_persons_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_annoyed_persons_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_angry_persons_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bad-mediocre",
+        "scene": "attendence",
+        "adj_shown": "bad",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_mediocre_bad_attendence_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_mediocre_attendence_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bad_attendence_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bent-askew",
+        "scene": "lpole",
+        "adj_shown": "askew",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_askew_bent_lpole_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_askew_lpole_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bent_lpole_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "blinding-bright",
+        "scene": "light",
+        "adj_shown": "blinding",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_bright_blinding_light_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_bright_light_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_blinding_light_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "brilliant-intelligent",
+        "scene": "reportc",
+        "adj_shown": "intelligent",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_intelligent_brilliant_reportc_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_intelligent_reportc_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_brilliant_reportc_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "broken-damaged",
+        "scene": "bridge",
+        "adj_shown": "broken",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_damaged_broken_bridge_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_damaged_bridge_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_broken_bridge_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cheap-affordable",
+        "scene": "bag",
+        "adj_shown": "affordable",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_affordable_cheap_bag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_affordable_bag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cheap_bag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cramped-snug",
+        "scene": "cargo",
+        "adj_shown": "cramped",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_snug_cramped_cargo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_snug_cargo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cramped_cargo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "crystal-transparent",
+        "scene": "ebag",
+        "adj_shown": "transparent",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_transparent_crystal_ebag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_transparent_ebag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_crystal_ebag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "dark-dim",
+        "scene": "photo",
+        "adj_shown": "dark",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dim_dark_photo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dim_photo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_dark_photo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "defeaning-loud",
+        "scene": "construction",
+        "adj_shown": "loud",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_loud_defeaning_construction_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_loud_construction_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_defeaning_construction_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "depleted-low",
+        "scene": "oil",
+        "adj_shown": "depleted",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_low_depleted_oil_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_low_oil_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_depleted_oil_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "drowsy-sleepy",
+        "scene": "yawn",
+        "adj_shown": "sleepy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_sleepy_drowsy_yawn_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_sleepy_yawn_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_drowsy_yawn_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "enormous-big",
+        "scene": "parking",
+        "adj_shown": "enormous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_big_enormous_parking_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_big_parking_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_enormous_parking_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "exhausted-tired",
+        "scene": "planner",
+        "adj_shown": "tired",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tired_exhausted_planner_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tired_planner_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_exhausted_planner_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extinct-endangered",
+        "scene": "habitat",
+        "adj_shown": "extinct",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_endangered_extinct_habitat_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_endangered_habitat_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extinct_habitat_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extraordinary-special",
+        "scene": "check",
+        "adj_shown": "special",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_special_extraordinary_check_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_special_check_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extraordinary_check_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "filthy-dirty",
+        "scene": "river",
+        "adj_shown": "filthy",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dirty_filthy_river_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dirty_river_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_filthy_river_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gigantic-large",
+        "scene": "sbuilding",
+        "adj_shown": "large",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_large_gigantic_sbuilding_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_large_sbuilding_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gigantic_sbuilding_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gone-scarce",
+        "scene": "supplies",
+        "adj_shown": "gone",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_scarse_gone_supplies_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_scarse_supplies_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gone_supplies_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gorgeous-pretty",
+        "scene": "garden",
+        "adj_shown": "pretty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_pretty_gorgeous_garden_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_pretty_garden_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gorgeous_garden_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hideous-ugly",
+        "scene": "building",
+        "adj_shown": "hideous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ugly_hideous_building_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ugly_building_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hideous_building_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hilarious-funny",
+        "scene": "talker",
+        "adj_shown": "funny",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_funny_hilarious_talker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_funny_talker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hilarious_talker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "horrific-unsettling",
+        "scene": "graph",
+        "adj_shown": "horrific",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unsettling_horrific_graph_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unsettling_graph_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_horrific_graph_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "idiotic-foolish",
+        "scene": "busdriver",
+        "adj_shown": "foolish",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_foolish_idiotic_busdriver_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_foolish_busdriver_pic.jpg",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_idiotic_busdriver_pic.jpg"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impeccable-satisfactory",
+        "scene": "jeep",
+        "adj_shown": "impeccable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_satisfactory_impeccable_jeep_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_satisfactory_jeep_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impeccable_jeep_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impossible-difficult",
+        "scene": "task",
+        "adj_shown": "difficult",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_difficult_impossible_task_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_difficult_task_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impossible_task_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impoverished-poor",
+        "scene": "place",
+        "adj_shown": "impoverished",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_poor_impoverished_place_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_poor_place_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impoverished_place_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "inaudible-quiet",
+        "scene": "radio",
+        "adj_shown": "quiet",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_quiet_inaudible_radio_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_quiet_radio_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_inaudible_radio_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "miserable-unhappy",
+        "scene": "union",
+        "adj_shown": "miserable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unhappy_miserable_union_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unhappy_union_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_miserable_union_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nasty-unkind",
+        "scene": "speaker",
+        "adj_shown": "unkind",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unkind_nasty_speaker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unkind_speaker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nasty_speaker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nonfunctional-faulty",
+        "scene": "poll",
+        "adj_shown": "nonfunctional",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_nonfaulty_nonfunctional_poll_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_nonfaulty_poll_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nonfunctional_poll_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "obligatory-encourage",
+        "scene": "safety",
+        "adj_shown": "encourage",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_encourage_obligatory_safety_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_encourage_safety_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_obligatory_safety_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "open-ajar",
+        "scene": "door",
+        "adj_shown": "open",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ajar_open_door_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ajar_door_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_open_door_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "parched-dry",
+        "scene": "field",
+        "adj_shown": "dry",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dry_parched_field_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dry_field_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_parched_field_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "perfect-great",
+        "scene": "team",
+        "adj_shown": "perfect",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_great_perfect_team_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_great_team_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_perfect_team_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "pouring-rainy",
+        "scene": "rally",
+        "adj_shown": "rainy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_rainy_pouring_rally_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_rainy_rally_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_pouring_rally_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "ridiculous-silly",
+        "scene": "candidate",
+        "adj_shown": "ridiculous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_silly_ridiculous_candidate_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_silly_candidate_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ridiculous_candidate_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "serene-calm",
+        "scene": "soldier",
+        "adj_shown": "calm",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_calm_serene_soldier_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_calm_soldier_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_serene_soldier_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "skinny-thin",
+        "scene": "dude",
+        "adj_shown": "skinny",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_thin_skinny_dude_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_thin_dude_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_skinny_dude_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "starving-hungry",
+        "scene": "fam",
+        "adj_shown": "hungry",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hungry_starving_fam_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hungry_fam_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_starving_fam_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "stunning-attractive",
+        "scene": "dress",
+        "adj_shown": "stunning",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_attractive_stunning_dress_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_attractive_dress_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_stunning_dress_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "tiny-small",
+        "scene": "fgoal",
+        "adj_shown": "small",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_small_tiny_fgoal_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_small_fgoal_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_tiny_fgoal_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unforgettable-memorable",
+        "scene": "celebration",
+        "adj_shown": "unforgettable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_memorable_unforgettable_celebration_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_memorable_celebration_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unforgettable_celebration_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unsolvable-hard",
+        "scene": "test",
+        "adj_shown": "hard",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hard_unsolvable_test_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hard_test_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unsolvable_test_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "certain-likely",
+        "scene": "rweather",
+        "adj_shown": "certain",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_likely_certain_rweather_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_likely_rweather_pic.jpg",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_certain_rweather_pic.jpg"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cold-cool",
+        "scene": "report",
+        "adj_shown": "cool",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_cool_cold_report_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_cool_report_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cold_report_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "delicious-edible",
+        "scene": "spaghetti",
+        "adj_shown": "delicious",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_edible_delicious_spaghetti_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_edible_spaghetti_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_delicious_spaghetti_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "delighted-happy",
+        "scene": "people",
+        "adj_shown": "happy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_happy_delighted_people_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_happy_people_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_delighted_people_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "drunk-tipsy",
+        "scene": "driver",
+        "adj_shown": "drunk",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tipsy_drunk_driver_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tipsy_driver_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_drunk_driver_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "dying-ill",
+        "scene": "patient",
+        "adj_shown": "ill",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ill_dying_patient_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ill_patient_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_dying_patient_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "excellent-good",
+        "scene": "plan",
+        "adj_shown": "excellent",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_good_excellent_plan_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_good_plan_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_excellent_plan_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "fat-chubby",
+        "scene": "kid",
+        "adj_shown": "chubby",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_chubby_fat_kid_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_chubby_kid_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_fat_kid_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hot-warm",
+        "scene": "temp",
+        "adj_shown": "hot",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_warm_hot_temp_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_warm_temp_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hot_temp_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "petrified-scared",
+        "scene": "voters",
+        "adj_shown": "scared",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_scared_petrified_voters_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_scared_voters_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_petrified_voters_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "soaked-wet",
+        "scene": "paperpile",
+        "adj_shown": "soaked",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_wet_soaked_paperpile_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_wet_paperpile_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_soaked_paperpile_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "spotless-clean",
+        "scene": "warehouse",
+        "adj_shown": "clean",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_clean_spotless_warehouse_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_clean_warehouse_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_spotless_warehouse_pic.png"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "1control - bike-boat",
+        "scene": "transport",
+        "adj_shown": "bike",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_bike_transport_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_boat_transport_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "2control - cat-dog",
+        "scene": "animal",
+        "adj_shown": "cat",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_cat_animal_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_dog_animal_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "3control - chair-lamp",
+        "scene": "furniture",
+        "adj_shown": "chair",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_chair_furniture_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_lamp_furniture_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "4control - hamburger-icecream",
+        "scene": "food",
+        "adj_shown": "hamburger",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hamberger_food_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_icecream_food_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "5control - pants-shirt",
+        "scene": "clothes",
+        "adj_shown": "pants",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_pants_clothes_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_shirt_clothes_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "6control - scissors-hammer",
+        "scene": "tool",
+        "adj_shown": "scissors",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_scissor_tool_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hammer_tool_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "7control - watch-glasses",
+        "scene": "assist",
+        "adj_shown": "watch",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_watch_assist_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_glasses_assist_pic.jpg"
+        }
+      }
+    ],
+    "2": [
+      {
+        "type": "experimental",
+        "pair": "ancient-old",
+        "scene": "road",
+        "adj_shown": "ancient",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_old_ancient_road_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_old_road_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ancient_road_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "angry-annoyed",
+        "scene": "persons",
+        "adj_shown": "annoyed",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_annoyed_angry_persons_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_annoyed_persons_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_angry_persons_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bad-mediocre",
+        "scene": "attendence",
+        "adj_shown": "bad",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_mediocre_bad_attendence_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_mediocre_attendence_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bad_attendence_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bent-askew",
+        "scene": "lpole",
+        "adj_shown": "askew",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_askew_bent_lpole_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_askew_lpole_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bent_lpole_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "blinding-bright",
+        "scene": "light",
+        "adj_shown": "blinding",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_bright_blinding_light_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_bright_light_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_blinding_light_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "brilliant-intelligent",
+        "scene": "reportc",
+        "adj_shown": "intelligent",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_intelligent_brilliant_reportc_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_intelligent_reportc_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_brilliant_reportc_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "broken-damaged",
+        "scene": "bridge",
+        "adj_shown": "broken",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_damaged_broken_bridge_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_damaged_bridge_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_broken_bridge_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cheap-affordable",
+        "scene": "bag",
+        "adj_shown": "affordable",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_affordable_cheap_bag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_affordable_bag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cheap_bag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cramped-snug",
+        "scene": "cargo",
+        "adj_shown": "cramped",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_snug_cramped_cargo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_snug_cargo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cramped_cargo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "crystal-transparent",
+        "scene": "ebag",
+        "adj_shown": "transparent",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_transparent_crystal_ebag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_transparent_ebag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_crystal_ebag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "dark-dim",
+        "scene": "photo",
+        "adj_shown": "dark",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dim_dark_photo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dim_photo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_dark_photo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "defeaning-loud",
+        "scene": "construction",
+        "adj_shown": "loud",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_loud_defeaning_construction_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_loud_construction_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_defeaning_construction_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "depleted-low",
+        "scene": "oil",
+        "adj_shown": "depleted",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_low_depleted_oil_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_low_oil_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_depleted_oil_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "drowsy-sleepy",
+        "scene": "yawn",
+        "adj_shown": "sleepy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_sleepy_drowsy_yawn_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_sleepy_yawn_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_drowsy_yawn_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "enormous-big",
+        "scene": "parking",
+        "adj_shown": "enormous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_big_enormous_parking_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_big_parking_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_enormous_parking_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "exhausted-tired",
+        "scene": "planner",
+        "adj_shown": "tired",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tired_exhausted_planner_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tired_planner_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_exhausted_planner_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extinct-endangered",
+        "scene": "habitat",
+        "adj_shown": "extinct",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_endangered_extinct_habitat_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_endangered_habitat_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extinct_habitat_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extraordinary-special",
+        "scene": "check",
+        "adj_shown": "special",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_special_extraordinary_check_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_special_check_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extraordinary_check_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "filthy-dirty",
+        "scene": "river",
+        "adj_shown": "filthy",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dirty_filthy_river_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dirty_river_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_filthy_river_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gigantic-large",
+        "scene": "sbuilding",
+        "adj_shown": "large",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_large_gigantic_sbuilding_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_large_sbuilding_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gigantic_sbuilding_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gone-scarce",
+        "scene": "supplies",
+        "adj_shown": "gone",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_scarse_gone_supplies_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_scarse_supplies_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gone_supplies_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gorgeous-pretty",
+        "scene": "garden",
+        "adj_shown": "pretty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_pretty_gorgeous_garden_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_pretty_garden_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gorgeous_garden_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hideous-ugly",
+        "scene": "building",
+        "adj_shown": "hideous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ugly_hideous_building_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ugly_building_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hideous_building_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hilarious-funny",
+        "scene": "talker",
+        "adj_shown": "funny",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_funny_hilarious_talker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_funny_talker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hilarious_talker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "horrific-unsettling",
+        "scene": "graph",
+        "adj_shown": "horrific",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unsettling_horrific_graph_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unsettling_graph_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_horrific_graph_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "idiotic-foolish",
+        "scene": "busdriver",
+        "adj_shown": "foolish",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_foolish_idiotic_busdriver_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_foolish_busdriver_pic.jpg",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_idiotic_busdriver_pic.jpg"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impeccable-satisfactory",
+        "scene": "jeep",
+        "adj_shown": "impeccable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_satisfactory_impeccable_jeep_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_satisfactory_jeep_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impeccable_jeep_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impossible-difficult",
+        "scene": "task",
+        "adj_shown": "difficult",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_difficult_impossible_task_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_difficult_task_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impossible_task_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impoverished-poor",
+        "scene": "place",
+        "adj_shown": "impoverished",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_poor_impoverished_place_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_poor_place_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impoverished_place_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "inaudible-quiet",
+        "scene": "radio",
+        "adj_shown": "quiet",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_quiet_inaudible_radio_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_quiet_radio_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_inaudible_radio_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "miserable-unhappy",
+        "scene": "union",
+        "adj_shown": "miserable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unhappy_miserable_union_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unhappy_union_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_miserable_union_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nasty-unkind",
+        "scene": "speaker",
+        "adj_shown": "unkind",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unkind_nasty_speaker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unkind_speaker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nasty_speaker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nonfunctional-faulty",
+        "scene": "poll",
+        "adj_shown": "nonfunctional",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_nonfaulty_nonfunctional_poll_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_nonfaulty_poll_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nonfunctional_poll_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "obligatory-encourage",
+        "scene": "safety",
+        "adj_shown": "encourage",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_encourage_obligatory_safety_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_encourage_safety_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_obligatory_safety_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "open-ajar",
+        "scene": "door",
+        "adj_shown": "open",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ajar_open_door_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ajar_door_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_open_door_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "parched-dry",
+        "scene": "field",
+        "adj_shown": "dry",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dry_parched_field_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dry_field_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_parched_field_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "perfect-great",
+        "scene": "team",
+        "adj_shown": "perfect",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_great_perfect_team_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_great_team_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_perfect_team_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "pouring-rainy",
+        "scene": "rally",
+        "adj_shown": "rainy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_rainy_pouring_rally_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_rainy_rally_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_pouring_rally_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "ridiculous-silly",
+        "scene": "candidate",
+        "adj_shown": "ridiculous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_silly_ridiculous_candidate_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_silly_candidate_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ridiculous_candidate_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "serene-calm",
+        "scene": "soldier",
+        "adj_shown": "calm",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_calm_serene_soldier_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_calm_soldier_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_serene_soldier_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "skinny-thin",
+        "scene": "dude",
+        "adj_shown": "skinny",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_thin_skinny_dude_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_thin_dude_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_skinny_dude_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "starving-hungry",
+        "scene": "fam",
+        "adj_shown": "hungry",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hungry_starving_fam_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hungry_fam_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_starving_fam_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "stunning-attractive",
+        "scene": "dress",
+        "adj_shown": "stunning",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_attractive_stunning_dress_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_attractive_dress_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_stunning_dress_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "tiny-small",
+        "scene": "fgoal",
+        "adj_shown": "small",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_small_tiny_fgoal_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_small_fgoal_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_tiny_fgoal_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unforgettable-memorable",
+        "scene": "celebration",
+        "adj_shown": "unforgettable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_memorable_unforgettable_celebration_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_memorable_celebration_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unforgettable_celebration_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unsolvable-hard",
+        "scene": "test",
+        "adj_shown": "hard",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hard_unsolvable_test_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hard_test_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unsolvable_test_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "certain-likely",
+        "scene": "rweather",
+        "adj_shown": "likely",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_likely_certain_rweather_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_likely_rweather_pic.jpg",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_certain_rweather_pic.jpg"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cold-cool",
+        "scene": "report",
+        "adj_shown": "cold",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_cool_cold_report_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_cool_report_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cold_report_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "delicious-edible",
+        "scene": "spaghetti",
+        "adj_shown": "edible",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_edible_delicious_spaghetti_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_edible_spaghetti_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_delicious_spaghetti_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "delighted-happy",
+        "scene": "people",
+        "adj_shown": "delighted",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_happy_delighted_people_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_happy_people_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_delighted_people_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "drunk-tipsy",
+        "scene": "driver",
+        "adj_shown": "tipsy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tipsy_drunk_driver_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tipsy_driver_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_drunk_driver_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "dying-ill",
+        "scene": "patient",
+        "adj_shown": "dying",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ill_dying_patient_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ill_patient_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_dying_patient_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "excellent-good",
+        "scene": "plan",
+        "adj_shown": "good",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_good_excellent_plan_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_good_plan_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_excellent_plan_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "fat-chubby",
+        "scene": "kid",
+        "adj_shown": "fat",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_chubby_fat_kid_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_chubby_kid_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_fat_kid_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hot-warm",
+        "scene": "temp",
+        "adj_shown": "warm",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_warm_hot_temp_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_warm_temp_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hot_temp_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "petrified-scared",
+        "scene": "voters",
+        "adj_shown": "petrified",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_scared_petrified_voters_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_scared_voters_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_petrified_voters_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "soaked-wet",
+        "scene": "paperpile",
+        "adj_shown": "wet",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_wet_soaked_paperpile_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_wet_paperpile_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_soaked_paperpile_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "spotless-clean",
+        "scene": "warehouse",
+        "adj_shown": "spotless",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_clean_spotless_warehouse_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_clean_warehouse_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_spotless_warehouse_pic.png"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "1control - bike-boat",
+        "scene": "transport",
+        "adj_shown": "boat",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_boat_transport_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_bike_transport_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "2control - cat-dog",
+        "scene": "animal",
+        "adj_shown": "dog",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_dog_animal_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_cat_animal_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "3control - chair-lamp",
+        "scene": "furniture",
+        "adj_shown": "lamp",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_lamp_furniture_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_chair_furniture_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "4control - hamburger-icecream",
+        "scene": "food",
+        "adj_shown": "ice cream",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_icecream_food_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hamberger_food_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "5control - pants-shirt",
+        "scene": "clothes",
+        "adj_shown": "shirt",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_shirt_clothes_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_pants_clothes_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "6control - scissors-hammer",
+        "scene": "tool",
+        "adj_shown": "hammer",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hammer_tool_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_scissor_tool_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "7control - watch-glasses",
+        "scene": "assist",
+        "adj_shown": "glasses",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_glasses_assist_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_watch_assist_pic.jpg"
+        }
+      }
+    ],
+    "3": [
+      {
+        "type": "experimental",
+        "pair": "ancient-old",
+        "scene": "road",
+        "adj_shown": "old",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_old_ancient_road_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_old_road_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ancient_road_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "angry-annoyed",
+        "scene": "persons",
+        "adj_shown": "angry",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_annoyed_angry_persons_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_annoyed_persons_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_angry_persons_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bad-mediocre",
+        "scene": "attendence",
+        "adj_shown": "mediocre",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_mediocre_bad_attendence_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_mediocre_attendence_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bad_attendence_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bent-askew",
+        "scene": "lpole",
+        "adj_shown": "bent",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_askew_bent_lpole_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_askew_lpole_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bent_lpole_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "blinding-bright",
+        "scene": "light",
+        "adj_shown": "bright",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_bright_blinding_light_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_bright_light_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_blinding_light_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "brilliant-intelligent",
+        "scene": "reportc",
+        "adj_shown": "brilliant",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_intelligent_brilliant_reportc_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_intelligent_reportc_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_brilliant_reportc_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "broken-damaged",
+        "scene": "bridge",
+        "adj_shown": "damaged",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_damaged_broken_bridge_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_damaged_bridge_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_broken_bridge_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cheap-affordable",
+        "scene": "bag",
+        "adj_shown": "cheap",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_affordable_cheap_bag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_affordable_bag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cheap_bag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cramped-snug",
+        "scene": "cargo",
+        "adj_shown": "snug",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_snug_cramped_cargo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_snug_cargo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cramped_cargo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "crystal-transparent",
+        "scene": "ebag",
+        "adj_shown": "crystal",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_transparent_crystal_ebag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_transparent_ebag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_crystal_ebag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "dark-dim",
+        "scene": "photo",
+        "adj_shown": "dim",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dim_dark_photo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dim_photo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_dark_photo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "defeaning-loud",
+        "scene": "construction",
+        "adj_shown": "deafening",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_loud_defeaning_construction_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_loud_construction_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_defeaning_construction_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "depleted-low",
+        "scene": "oil",
+        "adj_shown": "low",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_low_depleted_oil_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_low_oil_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_depleted_oil_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "drowsy-sleepy",
+        "scene": "yawn",
+        "adj_shown": "drowsy",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_sleepy_drowsy_yawn_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_sleepy_yawn_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_drowsy_yawn_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "enormous-big",
+        "scene": "parking",
+        "adj_shown": "big",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_big_enormous_parking_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_big_parking_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_enormous_parking_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "exhausted-tired",
+        "scene": "planner",
+        "adj_shown": "exhausted",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tired_exhausted_planner_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tired_planner_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_exhausted_planner_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extinct-endangered",
+        "scene": "habitat",
+        "adj_shown": "endangered",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_endangered_extinct_habitat_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_endangered_habitat_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extinct_habitat_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extraordinary-special",
+        "scene": "check",
+        "adj_shown": "extraordinary",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_special_extraordinary_check_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_special_check_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extraordinary_check_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "filthy-dirty",
+        "scene": "river",
+        "adj_shown": "dirty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dirty_filthy_river_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dirty_river_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_filthy_river_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gigantic-large",
+        "scene": "sbuilding",
+        "adj_shown": "gigantic",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_large_gigantic_sbuilding_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_large_sbuilding_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gigantic_sbuilding_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gone-scarce",
+        "scene": "supplies",
+        "adj_shown": "scarce",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_scarse_gone_supplies_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_scarse_supplies_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gone_supplies_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gorgeous-pretty",
+        "scene": "garden",
+        "adj_shown": "gorgeous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_pretty_gorgeous_garden_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_pretty_garden_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gorgeous_garden_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hideous-ugly",
+        "scene": "building",
+        "adj_shown": "ugly",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ugly_hideous_building_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ugly_building_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hideous_building_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hilarious-funny",
+        "scene": "talker",
+        "adj_shown": "hilarious",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_funny_hilarious_talker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_funny_talker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hilarious_talker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "horrific-unsettling",
+        "scene": "graph",
+        "adj_shown": "unsettling",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unsettling_horrific_graph_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unsettling_graph_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_horrific_graph_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "idiotic-foolish",
+        "scene": "busdriver",
+        "adj_shown": "idiotic",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_foolish_idiotic_busdriver_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_foolish_busdriver_pic.jpg",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_idiotic_busdriver_pic.jpg"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impeccable-satisfactory",
+        "scene": "jeep",
+        "adj_shown": "satisfactory",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_satisfactory_impeccable_jeep_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_satisfactory_jeep_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impeccable_jeep_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impossible-difficult",
+        "scene": "task",
+        "adj_shown": "impossible",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_difficult_impossible_task_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_difficult_task_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impossible_task_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impoverished-poor",
+        "scene": "place",
+        "adj_shown": "poor",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_poor_impoverished_place_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_poor_place_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impoverished_place_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "inaudible-quiet",
+        "scene": "radio",
+        "adj_shown": "inaudible",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_quiet_inaudible_radio_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_quiet_radio_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_inaudible_radio_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "miserable-unhappy",
+        "scene": "union",
+        "adj_shown": "unhappy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unhappy_miserable_union_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unhappy_union_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_miserable_union_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nasty-unkind",
+        "scene": "speaker",
+        "adj_shown": "nasty",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unkind_nasty_speaker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unkind_speaker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nasty_speaker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nonfunctional-faulty",
+        "scene": "poll",
+        "adj_shown": "faulty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_nonfaulty_nonfunctional_poll_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_nonfaulty_poll_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nonfunctional_poll_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "obligatory-encourage",
+        "scene": "safety",
+        "adj_shown": "obligatory",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_encourage_obligatory_safety_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_encourage_safety_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_obligatory_safety_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "open-ajar",
+        "scene": "door",
+        "adj_shown": "ajar",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ajar_open_door_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ajar_door_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_open_door_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "parched-dry",
+        "scene": "field",
+        "adj_shown": "parched",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dry_parched_field_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dry_field_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_parched_field_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "perfect-great",
+        "scene": "team",
+        "adj_shown": "great",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_great_perfect_team_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_great_team_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_perfect_team_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "pouring-rainy",
+        "scene": "rally",
+        "adj_shown": "pouring",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_rainy_pouring_rally_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_rainy_rally_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_pouring_rally_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "ridiculous-silly",
+        "scene": "candidate",
+        "adj_shown": "silly",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_silly_ridiculous_candidate_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_silly_candidate_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ridiculous_candidate_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "serene-calm",
+        "scene": "soldier",
+        "adj_shown": "serene",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_calm_serene_soldier_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_calm_soldier_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_serene_soldier_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "skinny-thin",
+        "scene": "dude",
+        "adj_shown": "thin",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_thin_skinny_dude_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_thin_dude_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_skinny_dude_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "starving-hungry",
+        "scene": "fam",
+        "adj_shown": "starving",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hungry_starving_fam_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hungry_fam_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_starving_fam_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "stunning-attractive",
+        "scene": "dress",
+        "adj_shown": "attractive",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_attractive_stunning_dress_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_attractive_dress_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_stunning_dress_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "tiny-small",
+        "scene": "fgoal",
+        "adj_shown": "tiny",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_small_tiny_fgoal_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_small_fgoal_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_tiny_fgoal_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unforgettable-memorable",
+        "scene": "celebration",
+        "adj_shown": "memorable",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_memorable_unforgettable_celebration_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_memorable_celebration_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unforgettable_celebration_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unsolvable-hard",
+        "scene": "test",
+        "adj_shown": "unsolvable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hard_unsolvable_test_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hard_test_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unsolvable_test_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "certain-possible",
+        "scene": "agreement",
+        "adj_shown": "certain",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_possible_certain_agreement_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_possible_agreement_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_certain_agreement_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "freezing-cold",
+        "scene": "appartment",
+        "adj_shown": "cold",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_cold_freezing_appartment_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_cold_appartment_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_freezing_appartment_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "delicious-tasty",
+        "scene": "soup",
+        "adj_shown": "delicious",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tasty_delicous_soup_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tasty_soup_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_delicous_soup_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "happy-content",
+        "scene": "folk",
+        "adj_shown": "content",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_content_happy_folk_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_content_folk_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_happy_folk_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "plastered-drunk",
+        "scene": "worker",
+        "adj_shown": "plastered",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_drunk_plastered_worker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_drunk_worker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_plastered_worker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "ill-sick",
+        "scene": "vcandidate",
+        "adj_shown": "sick",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_sick_ill_vcandidate_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_sick_vcandidate_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ill_vcandidate_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "good-adeqeuate",
+        "scene": "equipment",
+        "adj_shown": "good",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_adeqeuate_good_equipment_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_adeqeuate_equipment_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_good_equipment_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "obese-fat",
+        "scene": "guy",
+        "adj_shown": "fat",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_fat_obese_guy_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_fat_guy_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_obese_guy_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "scalding-hot",
+        "scene": "coffee",
+        "adj_shown": "scalding",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hot_scalding_coffee_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hot_coffee_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_scalding_coffee_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "scared-wary",
+        "scene": "travellers",
+        "adj_shown": "wary",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_wary_scared_travellers_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_wary_travellers_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_scared_travellers_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "wet-damp",
+        "scene": "carpet",
+        "adj_shown": "wet",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_wet_damp_carpet_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_damp_carpet_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_wet_carpet_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "sterile-clean",
+        "scene": "table",
+        "adj_shown": "clean",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_clean_sterile_table_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_clean_table_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_sterile_table_pic.png"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "1control - bike-boat",
+        "scene": "transport",
+        "adj_shown": "bike",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_bike_transport_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_boat_transport_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "2control - cat-dog",
+        "scene": "animal",
+        "adj_shown": "cat",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_cat_animal_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_dog_animal_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "3control - chair-lamp",
+        "scene": "furniture",
+        "adj_shown": "chair",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_chair_furniture_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_lamp_furniture_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "4control - hamburger-icecream",
+        "scene": "food",
+        "adj_shown": "hamburger",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hamberger_food_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_icecream_food_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "5control - pants-shirt",
+        "scene": "clothes",
+        "adj_shown": "pants",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_pants_clothes_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_shirt_clothes_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "6control - scissors-hammer",
+        "scene": "tool",
+        "adj_shown": "scissors",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_scissor_tool_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hammer_tool_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "7control - watch-glasses",
+        "scene": "assist",
+        "adj_shown": "watch",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_watch_assist_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_glasses_assist_pic.jpg"
+        }
+      }
+    ],
+    "4": [
+      {
+        "type": "experimental",
+        "pair": "ancient-old",
+        "scene": "road",
+        "adj_shown": "old",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_old_ancient_road_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_old_road_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ancient_road_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "angry-annoyed",
+        "scene": "persons",
+        "adj_shown": "angry",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_annoyed_angry_persons_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_annoyed_persons_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_angry_persons_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bad-mediocre",
+        "scene": "attendence",
+        "adj_shown": "mediocre",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_mediocre_bad_attendence_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_mediocre_attendence_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bad_attendence_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "bent-askew",
+        "scene": "lpole",
+        "adj_shown": "bent",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_askew_bent_lpole_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_askew_lpole_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_bent_lpole_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "blinding-bright",
+        "scene": "light",
+        "adj_shown": "bright",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_bright_blinding_light_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_bright_light_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_blinding_light_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "brilliant-intelligent",
+        "scene": "reportc",
+        "adj_shown": "brilliant",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_intelligent_brilliant_reportc_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_intelligent_reportc_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_brilliant_reportc_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "broken-damaged",
+        "scene": "bridge",
+        "adj_shown": "damaged",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_damaged_broken_bridge_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_damaged_bridge_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_broken_bridge_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cheap-affordable",
+        "scene": "bag",
+        "adj_shown": "cheap",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_affordable_cheap_bag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_affordable_bag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cheap_bag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "cramped-snug",
+        "scene": "cargo",
+        "adj_shown": "snug",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_snug_cramped_cargo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_snug_cargo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_cramped_cargo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "crystal-transparent",
+        "scene": "ebag",
+        "adj_shown": "crystal",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_transparent_crystal_ebag_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_transparent_ebag_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_crystal_ebag_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "dark-dim",
+        "scene": "photo",
+        "adj_shown": "dim",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dim_dark_photo_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dim_photo_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_dark_photo_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "defeaning-loud",
+        "scene": "construction",
+        "adj_shown": "deafening",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_loud_defeaning_construction_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_loud_construction_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_defeaning_construction_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "depleted-low",
+        "scene": "oil",
+        "adj_shown": "low",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_low_depleted_oil_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_low_oil_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_depleted_oil_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "drowsy-sleepy",
+        "scene": "yawn",
+        "adj_shown": "drowsy",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_sleepy_drowsy_yawn_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_sleepy_yawn_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_drowsy_yawn_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "enormous-big",
+        "scene": "parking",
+        "adj_shown": "big",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_big_enormous_parking_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_big_parking_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_enormous_parking_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "exhausted-tired",
+        "scene": "planner",
+        "adj_shown": "exhausted",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tired_exhausted_planner_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tired_planner_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_exhausted_planner_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extinct-endangered",
+        "scene": "habitat",
+        "adj_shown": "endangered",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_endangered_extinct_habitat_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_endangered_habitat_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extinct_habitat_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "extraordinary-special",
+        "scene": "check",
+        "adj_shown": "extraordinary",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_special_extraordinary_check_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_special_check_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_extraordinary_check_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "filthy-dirty",
+        "scene": "river",
+        "adj_shown": "dirty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dirty_filthy_river_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dirty_river_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_filthy_river_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gigantic-large",
+        "scene": "sbuilding",
+        "adj_shown": "gigantic",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_large_gigantic_sbuilding_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_large_sbuilding_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gigantic_sbuilding_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gone-scarce",
+        "scene": "supplies",
+        "adj_shown": "scarce",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_scarse_gone_supplies_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_scarse_supplies_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gone_supplies_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "gorgeous-pretty",
+        "scene": "garden",
+        "adj_shown": "gorgeous",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_pretty_gorgeous_garden_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_pretty_garden_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_gorgeous_garden_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hideous-ugly",
+        "scene": "building",
+        "adj_shown": "ugly",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ugly_hideous_building_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ugly_building_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hideous_building_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "hilarious-funny",
+        "scene": "talker",
+        "adj_shown": "hilarious",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_funny_hilarious_talker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_funny_talker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_hilarious_talker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "horrific-unsettling",
+        "scene": "graph",
+        "adj_shown": "unsettling",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unsettling_horrific_graph_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unsettling_graph_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_horrific_graph_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "idiotic-foolish",
+        "scene": "busdriver",
+        "adj_shown": "idiotic",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_foolish_idiotic_busdriver_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_foolish_busdriver_pic.jpg",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_idiotic_busdriver_pic.jpg"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impeccable-satisfactory",
+        "scene": "jeep",
+        "adj_shown": "satisfactory",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_satisfactory_impeccable_jeep_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_satisfactory_jeep_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impeccable_jeep_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impossible-difficult",
+        "scene": "task",
+        "adj_shown": "impossible",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_difficult_impossible_task_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_difficult_task_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impossible_task_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "impoverished-poor",
+        "scene": "place",
+        "adj_shown": "poor",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_poor_impoverished_place_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_poor_place_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_impoverished_place_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "inaudible-quiet",
+        "scene": "radio",
+        "adj_shown": "inaudible",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_quiet_inaudible_radio_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_quiet_radio_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_inaudible_radio_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "miserable-unhappy",
+        "scene": "union",
+        "adj_shown": "unhappy",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unhappy_miserable_union_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unhappy_union_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_miserable_union_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nasty-unkind",
+        "scene": "speaker",
+        "adj_shown": "nasty",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_unkind_nasty_speaker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_unkind_speaker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nasty_speaker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "nonfunctional-faulty",
+        "scene": "poll",
+        "adj_shown": "faulty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_nonfaulty_nonfunctional_poll_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_nonfaulty_poll_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_nonfunctional_poll_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "obligatory-encourage",
+        "scene": "safety",
+        "adj_shown": "obligatory",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_encourage_obligatory_safety_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_encourage_safety_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_obligatory_safety_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "open-ajar",
+        "scene": "door",
+        "adj_shown": "ajar",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_ajar_open_door_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_ajar_door_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_open_door_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "parched-dry",
+        "scene": "field",
+        "adj_shown": "parched",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_dry_parched_field_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_dry_field_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_parched_field_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "perfect-great",
+        "scene": "team",
+        "adj_shown": "great",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_great_perfect_team_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_great_team_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_perfect_team_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "pouring-rainy",
+        "scene": "rally",
+        "adj_shown": "pouring",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_rainy_pouring_rally_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_rainy_rally_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_pouring_rally_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "ridiculous-silly",
+        "scene": "candidate",
+        "adj_shown": "silly",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_silly_ridiculous_candidate_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_silly_candidate_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ridiculous_candidate_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "serene-calm",
+        "scene": "soldier",
+        "adj_shown": "serene",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_calm_serene_soldier_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_calm_soldier_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_serene_soldier_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "skinny-thin",
+        "scene": "dude",
+        "adj_shown": "thin",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_thin_skinny_dude_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_thin_dude_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_skinny_dude_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "starving-hungry",
+        "scene": "fam",
+        "adj_shown": "starving",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hungry_starving_fam_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hungry_fam_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_starving_fam_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "stunning-attractive",
+        "scene": "dress",
+        "adj_shown": "attractive",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_attractive_stunning_dress_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_attractive_dress_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_stunning_dress_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "tiny-small",
+        "scene": "fgoal",
+        "adj_shown": "tiny",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_small_tiny_fgoal_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_small_fgoal_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_tiny_fgoal_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unforgettable-memorable",
+        "scene": "celebration",
+        "adj_shown": "memorable",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_memorable_unforgettable_celebration_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_memorable_celebration_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unforgettable_celebration_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "unsolvable-hard",
+        "scene": "test",
+        "adj_shown": "unsolvable",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hard_unsolvable_test_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hard_test_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_unsolvable_test_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "certain-possible",
+        "scene": "agreement",
+        "adj_shown": "possible",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_possible_certain_agreement_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_possible_agreement_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_certain_agreement_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "freezing-cold",
+        "scene": "appartment",
+        "adj_shown": "freezing",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_cold_freezing_appartment_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_cold_appartment_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_freezing_appartment_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "delicious-tasty",
+        "scene": "soup",
+        "adj_shown": "tasty",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_tasty_delicous_soup_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_tasty_soup_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_delicous_soup_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "happy-content",
+        "scene": "folk",
+        "adj_shown": "happy",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_content_happy_folk_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_content_folk_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_happy_folk_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "plastered-drunk",
+        "scene": "worker",
+        "adj_shown": "drunk",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_drunk_plastered_worker_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_drunk_worker_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_plastered_worker_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "ill-sick",
+        "scene": "vcandidate",
+        "adj_shown": "ill",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_sick_ill_vcandidate_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_sick_vcandidate_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_ill_vcandidate_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "good-adeqeuate",
+        "scene": "equipment",
+        "adj_shown": "adequate",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_adeqeuate_good_equipment_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_adeqeuate_equipment_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_good_equipment_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "obese-fat",
+        "scene": "guy",
+        "adj_shown": "obese",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_fat_obese_guy_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_fat_guy_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_obese_guy_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "scalding-hot",
+        "scene": "coffee",
+        "adj_shown": "hot",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_hot_scalding_coffee_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_hot_coffee_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_scalding_coffee_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "scared-wary",
+        "scene": "travellers",
+        "adj_shown": "scared",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_wary_scared_travellers_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_wary_travellers_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_scared_travellers_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "wet-damp",
+        "scene": "carpet",
+        "adj_shown": "damp",
+        "adj_strength": "weak",
+        "correct": "weak",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_wet_damp_carpet_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_damp_carpet_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_wet_carpet_pic.png"
+        }
+      },
+      {
+        "type": "experimental",
+        "pair": "sterile-clean",
+        "scene": "table",
+        "adj_shown": "sterile",
+        "adj_strength": "strong",
+        "correct": "strong",
+        "images": {
+          "neutral": "https://chandlernichols41.github.io/survey-images/adjnorm_neutral_clean_sterile_table_pic.png",
+          "weak": "https://chandlernichols41.github.io/survey-images/adjnorm_weak_clean_table_pic.png",
+          "strong": "https://chandlernichols41.github.io/survey-images/adjnorm_strong_sterile_table_pic.png"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "1control - bike-boat",
+        "scene": "transport",
+        "adj_shown": "boat",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_boat_transport_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_bike_transport_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "2control - cat-dog",
+        "scene": "animal",
+        "adj_shown": "dog",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_dog_animal_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_cat_animal_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "3control - chair-lamp",
+        "scene": "furniture",
+        "adj_shown": "lamp",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_lamp_furniture_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_chair_furniture_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "4control - hamburger-icecream",
+        "scene": "food",
+        "adj_shown": "ice cream",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_icecream_food_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hamberger_food_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "5control - pants-shirt",
+        "scene": "clothes",
+        "adj_shown": "shirt",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_shirt_clothes_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_pants_clothes_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "6control - scissors-hammer",
+        "scene": "tool",
+        "adj_shown": "hammer",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_hammer_tool_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_scissor_tool_pic.jpg"
+        }
+      },
+      {
+        "type": "control",
+        "pair": "7control - watch-glasses",
+        "scene": "assist",
+        "adj_shown": "glasses",
+        "adj_strength": "control",
+        "correct": "target",
+        "images": {
+          "target": "https://chandlernichols41.github.io/survey-images/adjnorm_control_glasses_assist_pic.jpg",
+          "distractor": "https://chandlernichols41.github.io/survey-images/adjnorm_control_watch_assist_pic.jpg"
+        }
+      }
+    ]
+  }
+}

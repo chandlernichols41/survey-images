@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word &amp; Image Study</title>
+
+  <!-- jsPsych core + plugins (pinned versions) -->
+  <script src="https://unpkg.com/jspsych@7.3.4"></script>
+  <link  href="https://unpkg.com/jspsych@7.3.4/css/jspsych.css" rel="stylesheet">
+  <script src="https://unpkg.com/@jspsych/plugin-html-button-response@1.2.0"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-html-keyboard-response@1.1.3"></script>
+  <script src="https://unpkg.com/@jspsych/plugin-preload@1.1.3"></script>
+  <script src="https://unpkg.com/@jspsych-contrib/plugin-pipe@0.4"></script>
+
+  <style>
+    :root { --accent:#2563eb; --good:#16a34a; }
+    body { background:#f4f4f6; }
+    .jspsych-content { max-width: 1000px; }
+
+    /* text screens */
+    .screen-narrow { max-width: 720px; margin: 0 auto; text-align: left; line-height: 1.55; }
+    .screen-narrow h2 { text-align:center; }
+    .screen-narrow ul { margin: .5em 0 .5em 1.2em; }
+    .fineprint { font-size: .85em; color:#555; }
+
+    /* the adjective word on a trial */
+    .adj-word {
+      font-size: 2.6rem; font-weight: 800; letter-spacing:.5px;
+      margin: 10px 0 2px; text-transform: lowercase;
+    }
+    .adj-prompt { font-size: 1rem; color:#444; margin-bottom: 18px; }
+    .adj-counter { font-size:.8rem; color:#888; margin-bottom:4px; }
+
+    /* image choice buttons */
+    #jspsych-html-button-response-btngroup,
+    .jspsych-btn-group { display:flex; flex-wrap:wrap; justify-content:center; gap:18px; }
+    .img-choice {
+      border:3px solid transparent; border-radius:12px; background:#fff; padding:6px;
+      cursor:pointer; transition:transform .08s, border-color .12s, box-shadow .12s;
+      box-shadow:0 1px 4px rgba(0,0,0,.12);
+    }
+    .img-choice:hover { border-color:var(--accent); transform:translateY(-3px); box-shadow:0 6px 16px rgba(0,0,0,.18); }
+    .choice-img { display:block; width:260px; height:auto; border-radius:8px; }
+
+    /* example walk-through highlighting */
+    .ex-row { display:flex; flex-wrap:wrap; justify-content:center; gap:18px; margin:14px 0; }
+    .ex-item { border:3px solid #ddd; border-radius:12px; padding:8px; background:#fff; width:230px; }
+    .ex-item img { width:210px; height:auto; border-radius:8px; display:block; }
+    .ex-item .ex-label { font-size:.8rem; color:#666; margin-top:6px; }
+    .ex-item.correct { border-color:var(--good); box-shadow:0 0 0 3px rgba(22,163,74,.15); }
+    .ex-item.correct .ex-label { color:var(--good); font-weight:700; }
+    .ex-tag { display:inline-block; font-size:.75rem; padding:2px 8px; border-radius:10px; background:#eef; color:#334; }
+
+    @media (max-width:720px){ .choice-img{width:44vw;} .ex-item{width:44vw;} .ex-item img{width:100%;} }
+  </style>
+</head>
+<body>
+  <script src="config.js"></script>
+  <script src="experiment.js"></script>
+</body>
+</html>
