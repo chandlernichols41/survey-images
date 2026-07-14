@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trial layout preview</title>
+<style>
+  body { background:#f4f4f6; font-family: system-ui, sans-serif; margin:0; padding:28px 16px; }
+  .wrap { max-width:1000px; margin:0 auto; text-align:center; }
+  .adj-counter { font-size:.8rem; color:#888; }
+  .adj-word { font-size:2.6rem; font-weight:800; text-transform:lowercase; margin:6px 0 2px; }
+  .adj-prompt { font-size:1rem; color:#444; margin-bottom:18px; }
+  .row { display:flex; flex-wrap:wrap; justify-content:center; gap:18px; }
+  .img-choice { border:3px solid transparent; border-radius:12px; background:#fff; padding:6px;
+                cursor:pointer; box-shadow:0 1px 4px rgba(0,0,0,.12); transition:border-color .12s, transform .08s; }
+  .img-choice:hover { border-color:#2563eb; transform:translateY(-3px); }
+  /* SAME rule the live study uses */
+  .choice-img { display:block; width:300px; height:360px; object-fit:contain; background:#fff; border-radius:8px; }
+  .note { max-width:760px; margin:26px auto 0; color:#555; font-size:.92rem; text-align:left; line-height:1.5; }
+  .tag { display:inline-block; font-size:.72rem; background:#eef; color:#334; border-radius:10px; padding:2px 8px; }
+  @media (max-width:720px){ .choice-img{ width:44vw; height:54vw; } }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="adj-counter">Layout preview <span class="tag">not part of the study</span></div>
+    <div class="adj-word">happy</div>
+    <div class="adj-prompt">Click the image that best represents this word.</div>
+    <div class="row">
+      <button class="img-choice"><img class="choice-img" src="https://chandlernichols41.github.io/survey-images/adjnorm_neutral_content_happy_folk_pic.png" alt="neutral"></button>
+      <button class="img-choice"><img class="choice-img" src="https://chandlernichols41.github.io/survey-images/adjnorm_weak_content_folk_pic.png" alt="weak"></button>
+      <button class="img-choice"><img class="choice-img" src="https://chandlernichols41.github.io/survey-images/adjnorm_strong_happy_folk_pic.png" alt="strong"></button>
+    </div>
+    <div class="note">
+      This is the actual trial layout (same CSS the study uses) showing the &ldquo;happy / content&rdquo;
+      set &mdash; the one that had a mismatched image. Every option now sits in an identical 300&times;360
+      box: the whole image is shown, never cropped or stretched. The wider image simply centers with a
+      little space above and below &mdash; it is not distorted. (Positions are fixed here for the preview;
+      in the real study the three images are randomly placed each trial.)
+    </div>
+  </div>
+</body>
+</html>
