@@ -159,8 +159,8 @@ const instructions = [
         <p>Pick the image you feel best represents the word. Two things to keep in mind:</p>
         <ul>
           <li>Sometimes the <b>most extreme</b> image is exactly right.</li>
-          <li>Other times a <b>less extreme</b> image is the better fit &mdash; the most extreme
-              image would match only an even more extreme word.</li>
+          <li>Other times the most extreme image is <b>too strong</b> &mdash; a less extreme image
+              fits the word better, and that extreme image would suit a stronger word instead.</li>
         </ul>
         <p>The next two screens show one example of each. Please read the explanation on each.</p>
       </div>`,
