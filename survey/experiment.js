@@ -398,6 +398,17 @@ async function main() {
   const saveConfigured =
     CONFIG.DATAPIPE_EXPERIMENT_ID && CONFIG.DATAPIPE_EXPERIMENT_ID !== "FILL_ME";
 
+  // Stamp end-of-run timing in its own instant trial, so it is written to the
+  // data BEFORE the save step serializes it (on_start on the save trial was too late).
+  timeline.push({
+    type: jsPsychHtmlKeyboardResponse,
+    stimulus: "",
+    choices: "NO_KEYS",
+    trial_duration: 0,
+    on_finish: stampEndData,
+    data: { screen: "finalize" }
+  });
+
   if (saveConfigured && !CONFIG.DEBUG) {
     timeline.push({
       type: jsPsychPipe,
@@ -405,7 +416,6 @@ async function main() {
       experiment_id: CONFIG.DATAPIPE_EXPERIMENT_ID,
       filename: makeFilename,
       data_string: () => jsPsych.data.get().csv(),
-      on_start: stampEndData,
       data: { screen: "save" }
     });
   } else {
@@ -418,7 +428,6 @@ async function main() {
              and can be downloaded below.</p></div>`,
       choices: ["Download data"],
       data: { screen: "debug_save" },
-      on_start: stampEndData,
       on_finish: () => {
         console.log(jsPsych.data.get().csv());
         jsPsych.data.get().localSave("csv", makeFilename());
