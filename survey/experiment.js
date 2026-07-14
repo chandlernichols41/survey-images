@@ -26,6 +26,24 @@ const SONA_ID = getParam("id") || getParam("sona_id") || getParam("survey_code")
 // ID-entry screen below. Used for the saved filename and stamped on every row.
 let participantId = SONA_ID;
 
+// Session diagnostics captured when the page loads.
+const START_TIME = new Date();
+const SESSION_ID = START_TIME.getTime().toString(36) + "-" +
+                   Math.floor(Math.random() * 1e9).toString(36);
+function safeTimezone() {
+  try { return Intl.DateTimeFormat().resolvedOptions().timeZone || ""; }
+  catch (e) { return ""; }
+}
+// Add end-of-run timing to every row. Call right before data is saved.
+function stampEndData() {
+  const end = new Date();
+  jsPsych.data.addProperties({
+    end_time: end.toISOString(),
+    total_duration_ms: end - START_TIME,
+    total_duration_min: Math.round((end - START_TIME) / 6000) / 10
+  });
+}
+
 /* ---------- jsPsych init -------------------------------------------------- */
 const jsPsych = initJsPsych({
   on_finish: function () { /* redirect handled by the final trial */ }
@@ -286,8 +304,19 @@ async function main() {
   jsPsych.data.addProperties({
     participant_id: participantId,
     sona_id: SONA_ID,
+    session_id: SESSION_ID,
     version: version,
     study: "adjnorm_forced_choice",
+    start_time: START_TIME.toISOString(),
+    start_date: START_TIME.toISOString().slice(0, 10),
+    browser_language: navigator.language || "",
+    timezone: safeTimezone(),
+    screen_w: (window.screen && window.screen.width) || "",
+    screen_h: (window.screen && window.screen.height) || "",
+    window_w: window.innerWidth || "",
+    window_h: window.innerHeight || "",
+    device_pixel_ratio: window.devicePixelRatio || "",
+    is_touch: (("ontouchstart" in window) || (navigator.maxTouchPoints > 0)) ? 1 : 0,
     user_agent: navigator.userAgent
   });
 
@@ -351,6 +380,7 @@ async function main() {
       experiment_id: CONFIG.DATAPIPE_EXPERIMENT_ID,
       filename: makeFilename,
       data_string: () => jsPsych.data.get().csv(),
+      on_start: stampEndData,
       data: { screen: "save" }
     });
   } else {
@@ -363,6 +393,7 @@ async function main() {
              and can be downloaded below.</p></div>`,
       choices: ["Download data"],
       data: { screen: "debug_save" },
+      on_start: stampEndData,
       on_finish: () => {
         console.log(jsPsych.data.get().csv());
         jsPsych.data.get().localSave("csv", makeFilename());
