@@ -195,23 +195,43 @@ function exampleScreen({ title, word, imgs, correctRole, explanation }) {
 function buildExamples() {
   const S = CONFIG.EXAMPLE_IMAGES.speed;
   const H = CONFIG.EXAMPLE_IMAGES.height;
+  const F = CONFIG.EXAMPLE_IMAGES.fullness;
+  const M = CONFIG.EXAMPLE_IMAGES.messiness;
   return [
-    // Shown FIRST — the strongest image genuinely is the best fit.
+    // 1 — extreme image IS the best fit.
     exampleScreen({
-      title: "Example 1 of 2",
+      title: "Example 1 of 4",
       word: "fast", imgs: S, correctRole: "strong",
       explanation: `The best match for &ldquo;fast&rdquo; is the <b>highlighted</b> image &mdash; the
         car that is clearly speeding. The other two cars (one parked, one going a normal pace) are
         not going fast. <b>Here, most people will feel the most extreme image is the best fit.</b>`
     }),
-    // Shown SECOND — a strong image is NOT the best fit.
+    // 2 — extreme image is NOT the best fit.
     exampleScreen({
-      title: "Example 2 of 2",
+      title: "Example 2 of 4",
       word: "tall", imgs: H, correctRole: "weak",
       explanation: `The best match for &ldquo;tall&rdquo; is the <b>highlighted</b> figure. Notice it
         is <i>not</i> the tallest one &mdash; the tallest figure looks <i>really tall</i>, even
         <i>giant</i>, going beyond plain &ldquo;tall.&rdquo; <b>Here, most people will feel the most
         extreme image is not the best fit.</b>`
+    }),
+    // 3 — extreme image IS the best fit.
+    exampleScreen({
+      title: "Example 3 of 4",
+      word: "overflowing", imgs: F, correctRole: "strong",
+      explanation: `The best match for &ldquo;overflowing&rdquo; is the <b>highlighted</b> image
+        &mdash; the glass with water spilling over the sides. The other two glasses (one only
+        part-full, one full to the brim) are not overflowing. <b>Here, most people will feel the
+        most extreme image is the best fit.</b>`
+    }),
+    // 4 — extreme image is NOT the best fit.
+    exampleScreen({
+      title: "Example 4 of 4",
+      word: "messy", imgs: M, correctRole: "weak",
+      explanation: `The best match for &ldquo;messy&rdquo; is the <b>highlighted</b> room &mdash;
+        cluttered and untidy. Notice it is <i>not</i> the most extreme image &mdash; the completely
+        trashed room goes beyond &ldquo;messy&rdquo; and would suit a stronger word. <b>Here, most
+        people will feel the most extreme image is not the best fit.</b>`
     })
   ];
 }
@@ -345,7 +365,7 @@ async function main() {
   const allImgs = [];
   trials.forEach(t => Object.values(t.images).forEach(u => allImgs.push(u)));
   if (CONFIG.EXAMPLES_ENABLED) {
-    ["height", "speed"].forEach(k =>
+    Object.keys(CONFIG.EXAMPLE_IMAGES).forEach(k =>
       Object.values(CONFIG.EXAMPLE_IMAGES[k]).forEach(f => allImgs.push(imgURL(f))));
   }
   timeline.push({
