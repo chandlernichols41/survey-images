@@ -170,7 +170,7 @@ const instructions = [
 ];
 
 /* ---------- example walk-through screens ---------------------------------- */
-function exampleScreen({ title, word, imgs, correctRole, explanation }) {
+function exampleScreen({ title, word, imgs, correctRole, explanation, transition }) {
   const order = ["neutral", "weak", "strong"];   // fixed left->right (increasing intensity) for teaching clarity
   const cards = order.map(role => `
     <div class="ex-item ${role === correctRole ? "correct" : ""}">
@@ -186,6 +186,7 @@ function exampleScreen({ title, word, imgs, correctRole, explanation }) {
         <div class="adj-word" style="text-align:center;">${word}</div>
         <div class="ex-row">${cards}</div>
         <p>${explanation}</p>
+        ${transition ? `<p style="margin-top:1.3em;color:#555;">${transition}</p>` : ""}
       </div>`,
     choices: ["Next"],
     data: { screen: "example" }
@@ -204,7 +205,8 @@ function buildExamples() {
       word: "fast", imgs: S, correctRole: "strong",
       explanation: `The best match for &ldquo;fast&rdquo; is the <b>highlighted</b> image &mdash; the
         car that is clearly speeding. The other two cars (one parked, one going a normal pace) are
-        not going fast. <b>Here, most people will feel the most extreme image is the best fit.</b>`
+        not going fast. <b>Here, most people will feel the most extreme image is the best fit.</b>`,
+      transition: `Next, an example where the most extreme image is <b>not</b> the best choice.`
     }),
     // 2 — extreme image is NOT the best fit.
     exampleScreen({
@@ -213,7 +215,8 @@ function buildExamples() {
       explanation: `The best match for &ldquo;tall&rdquo; is the <b>highlighted</b> figure. Notice it
         is <i>not</i> the tallest one &mdash; the tallest figure looks <i>really tall</i>, even
         <i>giant</i>, going beyond plain &ldquo;tall.&rdquo; <b>Here, most people will feel the most
-        extreme image is not the best fit.</b>`
+        extreme image is not the best fit.</b>`,
+      transition: `Next, another word where the most extreme image <b>is</b> the best choice.`
     }),
     // 3 — extreme image IS the best fit.
     exampleScreen({
@@ -222,7 +225,8 @@ function buildExamples() {
       explanation: `The best match for &ldquo;overflowing&rdquo; is the <b>highlighted</b> image
         &mdash; the glass with water spilling over the sides. The other two glasses (one only
         part-full, one full to the brim) are not overflowing. <b>Here, most people will feel the
-        most extreme image is the best fit.</b>`
+        most extreme image is the best fit.</b>`,
+      transition: `One more &mdash; another case where a <b>less extreme</b> image fits better.`
     }),
     // 4 — extreme image is NOT the best fit.
     exampleScreen({
@@ -231,7 +235,8 @@ function buildExamples() {
       explanation: `The best match for &ldquo;messy&rdquo; is the <b>highlighted</b> room &mdash;
         cluttered and untidy. Notice it is <i>not</i> the most extreme image &mdash; the completely
         trashed room goes beyond &ldquo;messy&rdquo; and would suit a stronger word. <b>Here, most
-        people will feel the most extreme image is not the best fit.</b>`
+        people will feel the most extreme image is not the best fit.</b>`,
+      transition: `That&rsquo;s it for the examples &mdash; next, the study begins.`
     })
   ];
 }
