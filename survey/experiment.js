@@ -137,12 +137,12 @@ const instructions = [
     type: jsPsychHtmlButtonResponse,
     stimulus: `
       <div class="screen-narrow">
-        <h2>Match the intensity of the word</h2>
-        <p>Choose the image that best matches how <b>intense or extreme</b> the word is.</p>
+        <h2>When considering the best image</h2>
+        <p>Pick the image you feel best represents the word. Two things to keep in mind:</p>
         <ul>
           <li>Sometimes the <b>most extreme</b> image is exactly right.</li>
-          <li>Other times the word is <b>less intense</b>, so a <b>less extreme</b> image fits it
-              better &mdash; the most extreme image would match only an even more intense word.</li>
+          <li>Other times a <b>less extreme</b> image is the better fit &mdash; the most extreme
+              image would match only an even more extreme word.</li>
         </ul>
         <p>The next two screens show one example of each. Please read the explanation on each.</p>
       </div>`,
