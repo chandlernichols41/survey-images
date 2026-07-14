@@ -206,7 +206,7 @@ function buildExamples() {
       explanation: `The best match for &ldquo;fast&rdquo; is the <b>highlighted</b> image &mdash; the
         car that is clearly speeding. The other two cars (one parked, one going a normal pace) are
         not going fast. <b>Here, most people will feel the most extreme image is the best fit.</b>`,
-      transition: `Next, an example where the most extreme image is <b>not</b> the best choice.`
+      transition: `Next, an example where the most extreme image <b>may not be</b> the best choice.`
     }),
     // 2 — extreme image is NOT the best fit.
     exampleScreen({
@@ -215,7 +215,7 @@ function buildExamples() {
       explanation: `The best match for &ldquo;tall&rdquo; is the <b>highlighted</b> figure. Notice it
         is <i>not</i> the tallest one &mdash; the tallest figure looks <i>really tall</i>, even
         <i>giant</i>, going beyond plain &ldquo;tall.&rdquo; <b>Here, most people will feel the most
-        extreme image is not the best fit.</b>`,
+        extreme image may not be the best fit.</b>`,
       transition: `Next, another word where the most extreme image <b>is</b> the best choice.`
     }),
     // 3 — extreme image IS the best fit.
@@ -235,7 +235,7 @@ function buildExamples() {
       explanation: `The best match for &ldquo;messy&rdquo; is the <b>highlighted</b> room &mdash;
         cluttered and untidy. Notice it is <i>not</i> the most extreme image &mdash; the completely
         trashed room goes beyond &ldquo;messy&rdquo; and would suit a stronger word. <b>Here, most
-        people will feel the most extreme image is not the best fit.</b>`,
+        people will feel the most extreme image may not be the best fit.</b>`,
       transition: `That&rsquo;s it for the examples &mdash; next, the study begins.`
     })
   ];
