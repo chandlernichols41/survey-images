@@ -184,16 +184,16 @@ function buildExamples() {
       word: "fast", imgs: S, correctRole: "strong",
       explanation: `The best match for &ldquo;fast&rdquo; is the <b>highlighted</b> image &mdash; the
         car that is clearly speeding. The other two cars (one parked, one going a normal pace) are
-        not going fast. <b>Sometimes the strongest image genuinely is the right choice.</b>`
+        not going fast. <b>Here, most people will feel the most extreme image is the best fit.</b>`
     }),
     // Shown SECOND — a strong image is NOT the best fit.
     exampleScreen({
       title: "Example 2 of 2",
       word: "tall", imgs: H, correctRole: "weak",
       explanation: `The best match for &ldquo;tall&rdquo; is the <b>highlighted</b> figure. Notice it
-        is <i>not</i> the tallest one &mdash; the tallest figure is better described as a
-        <i>giant</i>, which goes beyond plain &ldquo;tall.&rdquo; <b>Sometimes the strongest image is
-        not the right choice.</b>`
+        is <i>not</i> the tallest one &mdash; the tallest figure looks <i>really tall</i>, even
+        <i>giant</i>, going beyond plain &ldquo;tall.&rdquo; <b>Here, most people will feel the most
+        extreme image is not the best fit.</b>`
     })
   ];
 }
