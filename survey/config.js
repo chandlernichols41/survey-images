@@ -67,5 +67,5 @@ const CONFIG = {
      DEBUG true = allow ?version=1..4 in the URL to force a version, skip the
      DataPipe save, and log/download the data locally instead of saving to OSF.
      ALWAYS set this back to false before launch.                              */
-  DEBUG: true,
+  DEBUG: false,
 };
