@@ -1803,7 +1803,7 @@
         "type": "experimental",
         "pair": "crystal-transparent",
         "scene": "ebag",
-        "adj_shown": "crystal",
+        "adj_shown": "crystal clear",
         "adj_strength": "strong",
         "correct": "strong",
         "images": {
@@ -2643,7 +2643,7 @@
         "type": "experimental",
         "pair": "crystal-transparent",
         "scene": "ebag",
-        "adj_shown": "crystal",
+        "adj_shown": "crystal clear",
         "adj_strength": "strong",
         "correct": "strong",
         "images": {
