@@ -262,8 +262,8 @@ function buildTrial(trial, index, total) {
   let options;
   if (trial.type === "experimental") {
     options = ["neutral", "weak", "strong"].map(role => ({ role, url: trial.images[role] }));
-  } else { // control
-    options = ["target", "distractor"].map(role => ({ role, url: trial.images[role] }));
+  } else { // control: target + one or more distractors (target is the only correct answer)
+    options = Object.keys(trial.images).map(role => ({ role, url: trial.images[role] }));
   }
   options = shuffle(options);
 
