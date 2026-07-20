@@ -61,15 +61,18 @@ async function decideVersion() {
   }
   if (CONFIG.DATAPIPE_EXPERIMENT_ID && CONFIG.DATAPIPE_EXPERIMENT_ID !== "FILL_ME") {
     try {
-      const r = await fetch("https://pipe.jspsych.org/api/v2/condition", {
+      // DataPipe condition endpoint is /api/condition/ (trailing slash) and the
+      // field name is "experimentID" (camelCase). Returns {message, condition}.
+      const r = await fetch("https://pipe.jspsych.org/api/condition/", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "Accept": "*/*" },
-        body: JSON.stringify({ experiment_id: CONFIG.DATAPIPE_EXPERIMENT_ID })
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({ experimentID: CONFIG.DATAPIPE_EXPERIMENT_ID })
       });
       const j = await r.json();
       if (typeof j.condition === "number") {
         return (j.condition % CONFIG.NUM_VERSIONS) + 1;   // 0-indexed -> 1..4
       }
+      console.warn("DataPipe condition response had no numeric condition:", j);
     } catch (e) {
       console.warn("DataPipe condition request failed; using random version.", e);
     }
