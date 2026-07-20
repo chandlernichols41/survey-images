@@ -54,9 +54,12 @@ const jsPsych = initJsPsych({
 /*  Prefer DataPipe balanced assignment; fall back to random.                 */
 /* ========================================================================== */
 async function decideVersion() {
-  const override = getParam("version");
-  if (CONFIG.DEBUG && override) {
-    const v = parseInt(override, 10);
+  // Explicit assignment override for deliberately balancing versions:
+  //   …/survey/?assign=3   forces version 3 (works in production, not just DEBUG).
+  // Use it to top up under-filled versions; the plain link keeps using DataPipe.
+  const assign = getParam("assign") || (CONFIG.DEBUG ? getParam("version") : null);
+  if (assign) {
+    const v = parseInt(assign, 10);
     if (v >= 1 && v <= CONFIG.NUM_VERSIONS) return v;
   }
   if (CONFIG.DATAPIPE_EXPERIMENT_ID && CONFIG.DATAPIPE_EXPERIMENT_ID !== "FILL_ME") {
