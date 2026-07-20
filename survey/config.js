@@ -11,6 +11,12 @@ const CONFIG = {
 
   NUM_VERSIONS: 4,
 
+  /* The plain link assigns among these versions (via DataPipe's balanced counter).
+     TEMPORARY catch-up: currently filling the two most-behind versions (3 & 4),
+     skipping the over-full versions. Once the four are even, set this back to
+     [1, 2, 3, 4] for normal even balancing. (?assign=N always overrides this.) */
+  VERSION_POOL: [3, 4, 3, 4],
+
   /* --- Images -------------------------------------------------------------
      Where the survey images are hosted (trailing slash required). This must
      match the base_url baked into stimuli.json by build_stimuli.py.          */

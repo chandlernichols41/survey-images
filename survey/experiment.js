@@ -62,6 +62,9 @@ async function decideVersion() {
     const v = parseInt(assign, 10);
     if (v >= 1 && v <= CONFIG.NUM_VERSIONS) return v;
   }
+  // Which versions the plain link may assign (defaults to all four).
+  const pool = (CONFIG.VERSION_POOL && CONFIG.VERSION_POOL.length)
+    ? CONFIG.VERSION_POOL : [1, 2, 3, 4];
   if (CONFIG.DATAPIPE_EXPERIMENT_ID && CONFIG.DATAPIPE_EXPERIMENT_ID !== "FILL_ME") {
     try {
       // DataPipe condition endpoint is /api/condition/ (trailing slash) and the
@@ -73,14 +76,14 @@ async function decideVersion() {
       });
       const j = await r.json();
       if (typeof j.condition === "number") {
-        return (j.condition % CONFIG.NUM_VERSIONS) + 1;   // 0-indexed -> 1..4
+        return pool[j.condition % pool.length];   // balanced counter -> a pool version
       }
       console.warn("DataPipe condition response had no numeric condition:", j);
     } catch (e) {
       console.warn("DataPipe condition request failed; using random version.", e);
     }
   }
-  return Math.floor(Math.random() * CONFIG.NUM_VERSIONS) + 1;
+  return pool[Math.floor(Math.random() * pool.length)];
 }
 
 /* ========================================================================== */
