@@ -138,7 +138,6 @@
       <thead>
         <tr>
           <th data-key="pair">Pair<span class="arrow"></span></th>
-          <th data-key="scene">Scene<span class="arrow"></span></th>
           <th class="num" data-key="strong_acc">Strong acc<span class="arrow"></span></th>
           <th class="num" data-key="weak_acc">Weak acc<span class="arrow"></span></th>
           <th class="num" data-key="pair_acc">Pair acc<span class="arrow"></span></th>
@@ -199,7 +198,7 @@ let activeTab = "pairs";
 let tableSortKey = "pair";
 let tableSortDir = "asc";
 
-fetch("dashboard_data.json")
+fetch("dashboard_data.json?v=" + Date.now(), {cache: "no-store"})
   .then(r => r.json())
   .then(d => { DATA = d; init(); })
   .catch(e => { document.getElementById("meta").textContent = "Failed to load dashboard_data.json: " + e; });
@@ -428,7 +427,6 @@ function renderList(){
   tbody.innerHTML = rows.map((p, i) => `
     <tr data-idx="${DATA.pairs.indexOf(p)}">
       <td>${p.strong_adj} / ${p.weak_adj}</td>
-      <td>${p.scene}</td>
       <td class="num">${fmt(p.strong_acc)} <span class="n-count">(n=${p.n_strong})</span><span class="mini-bar"><div style="width:${p.strong_acc ?? 0}%; background:${barColor(p.strong_acc)}"></div></span></td>
       <td class="num">${fmt(p.weak_acc)} <span class="n-count">(n=${p.n_weak})</span><span class="mini-bar"><div style="width:${p.weak_acc ?? 0}%; background:${barColor(p.weak_acc)}"></div></span></td>
       <td class="num">${fmt(p.pair_acc)} <span class="n-count">(n=${p.n_strong + p.n_weak})</span><span class="mini-bar"><div style="width:${p.pair_acc ?? 0}%; background:${barColor(p.pair_acc)}"></div></span></td>
