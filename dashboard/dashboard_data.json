@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-21T16:34:31+00:00",
+ "generated_at": "2026-07-21T16:43:56+00:00",
  "n_participants": 31,
  "base_url": "https://chandlernichols41.github.io/survey-images/",
  "pairs": [
@@ -80,7 +80,15 @@
    "weak_pct_neutral": 9.1,
    "flag": "weak_word_weak_acc; weak_word_overshoots_to_strong",
    "exclude_candidate": true,
-   "gotzner": null
+   "gotzner": {
+    "extreme": "extreme",
+    "polarity": "pos",
+    "boundedness": "B",
+    "weak_standard": "max",
+    "distance": 4.63,
+    "SI": 0.11,
+    "NS": 0.73
+   }
   },
   {
    "pair": "unforgettable-memorable",
@@ -662,7 +670,15 @@
    "weak_pct_neutral": 0.0,
    "flag": "ok",
    "exclude_candidate": false,
-   "gotzner": null
+   "gotzner": {
+    "extreme": "extreme",
+    "polarity": "neg",
+    "boundedness": "B",
+    "weak_standard": "max",
+    "distance": 5.89,
+    "SI": 0.27,
+    "NS": 0.75
+   }
   },
   {
    "pair": "extraordinary-special",
@@ -783,7 +799,15 @@
    "weak_pct_neutral": 0.0,
    "flag": "ok",
    "exclude_candidate": false,
-   "gotzner": null
+   "gotzner": {
+    "extreme": "extreme",
+    "polarity": "pos",
+    "boundedness": "B",
+    "weak_standard": "rel",
+    "distance": 6.21,
+    "SI": 0.79,
+    "NS": 0.5
+   }
   },
   {
    "pair": "drowsy-sleepy",
@@ -1070,7 +1094,15 @@
    "weak_pct_neutral": 0.0,
    "flag": "strong_word_weak_acc",
    "exclude_candidate": true,
-   "gotzner": null
+   "gotzner": {
+    "extreme": "non",
+    "polarity": "pos",
+    "boundedness": "NB",
+    "weak_standard": "rel",
+    "distance": 4.23,
+    "SI": 0.44,
+    "NS": 0.78
+   }
   },
   {
    "pair": "cheap-affordable",
@@ -1660,7 +1692,15 @@
    "weak_pct_neutral": 0.0,
    "flag": "strong_word_weak_acc",
    "exclude_candidate": true,
-   "gotzner": null
+   "gotzner": {
+    "extreme": "non",
+    "polarity": "neg",
+    "boundedness": "B",
+    "weak_standard": "min",
+    "distance": 4.08,
+    "SI": 0.39,
+    "NS": 0.63
+   }
   },
   {
    "pair": "open-ajar",
@@ -1934,6 +1974,56 @@
    },
    "n": 31,
    "acc": 100.0
+  }
+ ],
+ "gotzner_correlations": [
+  {
+   "label": "Weak-word accuracy vs. Gotzner SI (scalar implicature rate)",
+   "r": 0.295,
+   "p": 0.034,
+   "n": 52
+  },
+  {
+   "label": "Weak-word accuracy vs. Gotzner NS (negative strengthening rate)",
+   "r": -0.22,
+   "p": 0.1168,
+   "n": 52
+  },
+  {
+   "label": "Weak-word overshoot-to-strong vs. Gotzner SI",
+   "r": -0.288,
+   "p": 0.0382,
+   "n": 52
+  },
+  {
+   "label": "Weak-word overshoot-to-strong vs. Gotzner NS",
+   "r": 0.208,
+   "p": 0.1394,
+   "n": 52
+  },
+  {
+   "label": "Strong-word accuracy vs. Gotzner SI",
+   "r": -0.172,
+   "p": 0.2232,
+   "n": 52
+  },
+  {
+   "label": "Strong-word accuracy vs. Gotzner NS",
+   "r": -0.122,
+   "p": 0.3897,
+   "n": 52
+  },
+  {
+   "label": "Strong-word accuracy vs. Gotzner semantic distance",
+   "r": 0.495,
+   "p": 0.0002,
+   "n": 52
+  },
+  {
+   "label": "Weak-word accuracy vs. Gotzner semantic distance",
+   "r": -0.134,
+   "p": 0.3423,
+   "n": 52
   }
  ]
 }
