@@ -83,6 +83,12 @@
   .n-count{font-size:.72rem; color:var(--muted); font-weight:400;}
   .group-table tr:last-child td{border-bottom:none;}
 
+  .collapsible-header{display:flex; align-items:center; gap:6px; cursor:pointer; user-select:none; margin:0 0 8px;}
+  .collapsible-header .toggle-icon{display:inline-block; transition:transform .15s; font-size:.75em; color:var(--muted);}
+  .collapsible-header.collapsed .toggle-icon{transform:rotate(-90deg);}
+  .collapsible-content.collapsed{display:none;}
+  .collapse-all-btn{font-size:.8rem; color:var(--accent); background:none; border:none; cursor:pointer; padding:0; text-decoration:underline;}
+
   .replace-table td, .replace-table th{vertical-align:top;}
   .cat-pill{display:inline-block; font-size:.68rem; padding:2px 7px; border-radius:9px; white-space:nowrap;}
   .cat-clean_substitution{background:#eef2ff; color:#3730a3;}
@@ -148,13 +154,17 @@
     </table>
   </div>
   <div id="groupsWrap" style="display:none;">
-    <p class="groups-note">Grouped by scale-structure properties from Gotzner, Solt &amp; Benz (2018) — available for <span id="gotznerMatchN">0</span> of <span id="gotznerTotalN">0</span> pairs (the rest use wording that doesn't exactly match their norms and are excluded from these breakdowns).</p>
+    <p class="groups-note">Grouped by scale-structure properties from Gotzner, Solt &amp; Benz (2018) — available for <span id="gotznerMatchN">0</span> of <span id="gotznerTotalN">0</span> pairs (the rest use wording that doesn't exactly match their norms and are excluded from these breakdowns).
+      &nbsp;<button class="collapse-all-btn" id="collapseAllBtn">Collapse all</button>
+    </p>
     <div class="group-block">
-      <h3>Pairwise correlations vs. Gotzner measures</h3>
-      <table class="group-table">
-        <thead><tr><th>Comparison</th><th class="num">r</th><th class="num">p</th><th class="num">n</th></tr></thead>
-        <tbody id="corrTableBody"></tbody>
-      </table>
+      <h3 class="collapsible-header"><span class="toggle-icon">▾</span> Pairwise correlations vs. Gotzner measures</h3>
+      <div class="collapsible-content">
+        <table class="group-table">
+          <thead><tr><th>Comparison</th><th class="num">r</th><th class="num">p</th><th class="num">n</th></tr></thead>
+          <tbody id="corrTableBody"></tbody>
+        </table>
+      </div>
     </div>
     <div id="groupsBody"></div>
   </div>
@@ -272,6 +282,17 @@ function init(){
   renderGroups();
   renderReplaced();
   render();
+
+  document.getElementById("collapseAllBtn").addEventListener("click", () => {
+    const headers = document.querySelectorAll("#groupsWrap .collapsible-header");
+    const btn = document.getElementById("collapseAllBtn");
+    const collapsing = btn.textContent === "Collapse all";
+    headers.forEach(h => {
+      h.classList.toggle("collapsed", collapsing);
+      h.nextElementSibling.classList.toggle("collapsed", collapsing);
+    });
+    btn.textContent = collapsing ? "Expand all" : "Collapse all";
+  });
 }
 
 const CATEGORY_LABEL = {
@@ -398,13 +419,28 @@ function renderGroups(){
     }).join("");
     return `
       <div class="group-block">
-        <h3>${dim.label}</h3>
-        <table class="group-table">
-          <thead><tr><th>Group</th><th class="num">n</th><th class="num">Strong acc</th><th class="num">Weak acc</th><th class="num">Weak overshoot&rarr;strong</th></tr></thead>
-          <tbody>${rows}</tbody>
-        </table>
+        <h3 class="collapsible-header"><span class="toggle-icon">▾</span> ${dim.label}</h3>
+        <div class="collapsible-content">
+          <table class="group-table">
+            <thead><tr><th>Group</th><th class="num">n</th><th class="num">Strong acc</th><th class="num">Weak acc</th><th class="num">Weak overshoot&rarr;strong</th></tr></thead>
+            <tbody>${rows}</tbody>
+          </table>
+        </div>
       </div>`;
   }).join("");
+
+  attachCollapsibles();
+}
+
+function attachCollapsibles(){
+  document.querySelectorAll("#groupsWrap .collapsible-header").forEach(h => {
+    if (h.dataset.wired) return;
+    h.dataset.wired = "1";
+    h.addEventListener("click", () => {
+      h.classList.toggle("collapsed");
+      h.nextElementSibling.classList.toggle("collapsed");
+    });
+  });
 }
 
 function renderCards(){
