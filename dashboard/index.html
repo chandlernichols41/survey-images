@@ -43,13 +43,36 @@
   .badge{display:inline-block; font-size:.7rem; padding:2px 8px; border-radius:10px; margin-top:6px;}
   .badge.ok{background:#e8f5ec; color:var(--good);}
   .badge.bad{background:#fdecea; color:var(--bad);}
-  .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:20; cursor:zoom-out;}
+  .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:30; cursor:zoom-out;}
   .lightbox.open{display:flex;}
   .lightbox img{max-width:90vw; max-height:90vh; border-radius:8px;}
   .empty{text-align:center; color:var(--muted); padding:60px 0;}
+
+  .table-wrap{background:var(--card); border:1px solid var(--line); border-radius:14px; overflow:hidden;}
+  table.pairs-table{width:100%; border-collapse:collapse; font-size:.88rem;}
+  table.pairs-table th, table.pairs-table td{padding:9px 14px; text-align:left; border-bottom:1px solid var(--line);}
+  table.pairs-table th{background:var(--bg); cursor:pointer; user-select:none; white-space:nowrap; color:var(--muted); font-size:.78rem; text-transform:uppercase; letter-spacing:.03em;}
+  table.pairs-table th .arrow{margin-left:4px; opacity:.5;}
+  table.pairs-table th.active-sort{color:var(--ink);}
+  table.pairs-table th.active-sort .arrow{opacity:1;}
+  table.pairs-table tbody tr{cursor:pointer;}
+  table.pairs-table tbody tr:hover{background:#f8f9fb;}
+  table.pairs-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  table.pairs-table .mini-bar{display:inline-block; width:60px; height:6px; border-radius:3px; background:var(--line); vertical-align:middle; margin-left:8px; overflow:hidden;}
+  table.pairs-table .mini-bar > div{height:100%;}
+  td.flagcell{font-size:.72rem;}
+  .pill-ok{color:var(--good);}
+  .pill-bad{color:var(--bad);}
+
+  .modal-overlay{position:fixed; inset:0; background:rgba(0,0,0,.5); display:none; align-items:center; justify-content:center; z-index:25; padding:20px;}
+  .modal-overlay.open{display:flex;}
+  .modal-box{background:#fff; border-radius:14px; max-width:520px; width:100%; max-height:90vh; overflow:auto; padding:18px; position:relative;}
+  .modal-close{position:absolute; top:10px; right:14px; font-size:1.3rem; background:none; border:none; cursor:pointer; color:var(--muted);}
+
   @media (max-width:600px){
     .controls{position:static;}
     header{position:static;}
+    table.pairs-table{font-size:.78rem;}
   }
 </style>
 </head>
@@ -64,35 +87,70 @@
 <div class="controls">
   <input type="text" id="search" placeholder="Search word or pair…">
   <select id="sort">
-    <option value="weak_asc">Weak accuracy (worst first)</option>
-    <option value="strong_asc">Strong accuracy (worst first)</option>
+    <option value="weak_asc">Weak accuracy: worst first</option>
+    <option value="weak_desc">Weak accuracy: best first</option>
+    <option value="strong_asc">Strong accuracy: worst first</option>
+    <option value="strong_desc">Strong accuracy: best first</option>
+    <option value="pair_asc">Pair accuracy: worst first</option>
+    <option value="pair_desc">Pair accuracy: best first</option>
     <option value="alpha">Alphabetical</option>
   </select>
   <label><input type="checkbox" id="flaggedOnly"> Flagged only</label>
   <div class="tabs">
-    <button class="tab-btn active" data-tab="pairs">Pairs (<span id="pairCount">0</span>)</button>
+    <button class="tab-btn active" data-tab="pairs">Cards (<span id="pairCount">0</span>)</button>
+    <button class="tab-btn" data-tab="list">List (<span id="listCount">0</span>)</button>
     <button class="tab-btn" data-tab="controls">Controls (<span id="ctrlCount">0</span>)</button>
   </div>
 </div>
 
 <main>
   <div id="pairsGrid" class="grid"></div>
+  <div id="listWrap" class="table-wrap" style="display:none;">
+    <table class="pairs-table" id="pairsTable">
+      <thead>
+        <tr>
+          <th data-key="pair">Pair<span class="arrow"></span></th>
+          <th data-key="scene">Scene<span class="arrow"></span></th>
+          <th data-key="strong_acc">Strong acc<span class="arrow"></span></th>
+          <th data-key="weak_acc">Weak acc<span class="arrow"></span></th>
+          <th data-key="pair_acc">Pair acc<span class="arrow"></span></th>
+          <th data-key="flag">Flag<span class="arrow"></span></th>
+        </tr>
+      </thead>
+      <tbody id="pairsTableBody"></tbody>
+    </table>
+  </div>
   <div id="controlsGrid" class="grid" style="display:none;"></div>
   <div id="emptyMsg" class="empty" style="display:none;">No pairs match.</div>
 </main>
 
 <div class="lightbox" id="lightbox"><img id="lightboxImg"></div>
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" id="modalBox">
+    <button class="modal-close" id="modalClose">×</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
 
 <script>
 let DATA = null;
 let activeTab = "pairs";
+let tableSortKey = "pair";
+let tableSortDir = "asc";
 
 fetch("dashboard_data.json")
   .then(r => r.json())
   .then(d => { DATA = d; init(); })
   .catch(e => { document.getElementById("meta").textContent = "Failed to load dashboard_data.json: " + e; });
 
+function pairAcc(p){
+  const vals = [p.strong_acc, p.weak_acc].filter(v => v !== null && v !== undefined);
+  return vals.length ? Math.round((vals.reduce((a,b)=>a+b,0)/vals.length) * 10) / 10 : null;
+}
+
 function init(){
+  DATA.pairs.forEach(p => { p.pair_acc = pairAcc(p); });
+
   document.getElementById("meta").textContent =
     `Generated ${new Date(DATA.generated_at).toLocaleString()} · N=${DATA.n_participants} participants`;
 
@@ -109,6 +167,7 @@ function init(){
     <div class="stat"><div class="n">${DATA.controls.length}</div><div class="lbl">Control items</div></div>
   `;
   document.getElementById("pairCount").textContent = DATA.pairs.length;
+  document.getElementById("listCount").textContent = DATA.pairs.length;
   document.getElementById("ctrlCount").textContent = DATA.controls.length;
 
   document.getElementById("search").addEventListener("input", render);
@@ -119,9 +178,20 @@ function init(){
     b.classList.add("active");
     activeTab = b.dataset.tab;
     document.getElementById("pairsGrid").style.display = activeTab==="pairs" ? "grid" : "none";
+    document.getElementById("listWrap").style.display = activeTab==="list" ? "block" : "none";
     document.getElementById("controlsGrid").style.display = activeTab==="controls" ? "grid" : "none";
     render();
   }));
+  document.querySelectorAll("#pairsTable th").forEach(th => th.addEventListener("click", () => {
+    const key = th.dataset.key;
+    if (tableSortKey === key) tableSortDir = (tableSortDir === "asc" ? "desc" : "asc");
+    else { tableSortKey = key; tableSortDir = "asc"; }
+    render();
+  }));
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("modalOverlay").addEventListener("click", (e) => {
+    if (e.target.id === "modalOverlay") closeModal();
+  });
 
   renderControls();
   render();
@@ -135,25 +205,85 @@ function barColor(pct){
 }
 function var_muted(){ return "#999"; }
 
-function render(){
-  if (activeTab !== "pairs") return;
+function filteredPairs(){
   const q = document.getElementById("search").value.trim().toLowerCase();
-  const sortMode = document.getElementById("sort").value;
   const flaggedOnly = document.getElementById("flaggedOnly").checked;
-
-  let rows = DATA.pairs.filter(p =>
+  return DATA.pairs.filter(p =>
     (!q || p.pair.toLowerCase().includes(q) || p.strong_adj.toLowerCase().includes(q) || p.weak_adj.toLowerCase().includes(q)) &&
     (!flaggedOnly || p.exclude_candidate)
   );
+}
 
-  if (sortMode === "weak_asc") rows.sort((a,b)=>(a.weak_acc ?? 999)-(b.weak_acc ?? 999));
-  else if (sortMode === "strong_asc") rows.sort((a,b)=>(a.strong_acc ?? 999)-(b.strong_acc ?? 999));
+function render(){
+  if (activeTab === "pairs") renderCards();
+  else if (activeTab === "list") renderList();
+}
+
+function renderCards(){
+  const sortMode = document.getElementById("sort").value;
+  let rows = filteredPairs();
+
+  const byNum = (key, dir) => (a,b) => {
+    const av = a[key] ?? (dir==="asc" ? 999 : -1);
+    const bv = b[key] ?? (dir==="asc" ? 999 : -1);
+    return dir === "asc" ? av-bv : bv-av;
+  };
+  if (sortMode === "weak_asc") rows.sort(byNum("weak_acc","asc"));
+  else if (sortMode === "weak_desc") rows.sort(byNum("weak_acc","desc"));
+  else if (sortMode === "strong_asc") rows.sort(byNum("strong_acc","asc"));
+  else if (sortMode === "strong_desc") rows.sort(byNum("strong_acc","desc"));
+  else if (sortMode === "pair_asc") rows.sort(byNum("pair_acc","asc"));
+  else if (sortMode === "pair_desc") rows.sort(byNum("pair_acc","desc"));
   else rows.sort((a,b)=>a.pair.localeCompare(b.pair));
 
   const grid = document.getElementById("pairsGrid");
   grid.innerHTML = rows.map(cardHtml).join("");
   document.getElementById("emptyMsg").style.display = rows.length ? "none" : "block";
   attachImgClicks();
+}
+
+function renderList(){
+  let rows = filteredPairs();
+  const dir = tableSortDir === "asc" ? 1 : -1;
+  rows.sort((a,b) => {
+    let av = a[tableSortKey], bv = b[tableSortKey];
+    if (typeof av === "string" || typeof bv === "string") {
+      av = (av ?? "").toString(); bv = (bv ?? "").toString();
+      return dir * av.localeCompare(bv);
+    }
+    av = av ?? -1; bv = bv ?? -1;
+    return dir * (av - bv);
+  });
+
+  document.querySelectorAll("#pairsTable th").forEach(th => {
+    th.classList.toggle("active-sort", th.dataset.key === tableSortKey);
+    th.querySelector(".arrow").textContent = th.dataset.key === tableSortKey ? (tableSortDir === "asc" ? "▲" : "▼") : "";
+  });
+
+  const tbody = document.getElementById("pairsTableBody");
+  tbody.innerHTML = rows.map((p, i) => `
+    <tr data-idx="${DATA.pairs.indexOf(p)}">
+      <td>${p.strong_adj} / ${p.weak_adj}</td>
+      <td>${p.scene}</td>
+      <td class="num">${fmt(p.strong_acc)}<span class="mini-bar"><div style="width:${p.strong_acc ?? 0}%; background:${barColor(p.strong_acc)}"></div></span></td>
+      <td class="num">${fmt(p.weak_acc)}<span class="mini-bar"><div style="width:${p.weak_acc ?? 0}%; background:${barColor(p.weak_acc)}"></div></span></td>
+      <td class="num">${fmt(p.pair_acc)}<span class="mini-bar"><div style="width:${p.pair_acc ?? 0}%; background:${barColor(p.pair_acc)}"></div></span></td>
+      <td class="flagcell ${p.exclude_candidate ? 'pill-bad' : 'pill-ok'}">${p.exclude_candidate ? p.flag.replace(/_/g,' ').replace(/;/g,' · ') : 'ok'}</td>
+    </tr>`).join("");
+  document.getElementById("emptyMsg").style.display = rows.length ? "none" : "block";
+
+  tbody.querySelectorAll("tr").forEach(tr => tr.addEventListener("click", () => {
+    openDetail(DATA.pairs[parseInt(tr.dataset.idx, 10)]);
+  }));
+}
+
+function openDetail(p){
+  document.getElementById("modalBody").innerHTML = cardHtml(p);
+  document.getElementById("modalOverlay").classList.add("open");
+  attachImgClicks();
+}
+function closeModal(){
+  document.getElementById("modalOverlay").classList.remove("open");
 }
 
 function cardHtml(p){
