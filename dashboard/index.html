@@ -80,6 +80,15 @@
   .group-table .mini-bar > div{height:100%;}
   .group-table tr:last-child td{border-bottom:none;}
 
+  .replace-table td, .replace-table th{vertical-align:top;}
+  .cat-pill{display:inline-block; font-size:.68rem; padding:2px 7px; border-radius:9px; white-space:nowrap;}
+  .cat-clean_substitution{background:#eef2ff; color:#3730a3;}
+  .cat-role_reversed{background:#fdecea; color:var(--bad);}
+  .cat-family_invention{background:#e8f5ec; color:var(--good);}
+  .cat-anomaly{background:#fff4e5; color:var(--warn);}
+  .cat-independent{background:#f0f0f0; color:var(--muted);}
+  .ambig-tag{display:inline-block; font-size:.68rem; padding:2px 7px; border-radius:9px; background:#fef3c7; color:#92400e; margin-left:4px;}
+
   @media (max-width:600px){
     .controls{position:static;}
     header{position:static;}
@@ -114,6 +123,7 @@
     <button class="tab-btn active" data-tab="pairs">Cards (<span id="pairCount">0</span>)</button>
     <button class="tab-btn" data-tab="list">List (<span id="listCount">0</span>)</button>
     <button class="tab-btn" data-tab="groups">Gotzner Groups</button>
+    <button class="tab-btn" data-tab="replaced">Replaced Pairs (<span id="replacedCount">0</span>)</button>
     <button class="tab-btn" data-tab="controls">Controls (<span id="ctrlCount">0</span>)</button>
   </div>
 </div>
@@ -145,6 +155,28 @@
       </table>
     </div>
     <div id="groupsBody"></div>
+  </div>
+  <div id="replacedWrap" style="display:none;">
+    <p class="groups-note">
+      18 of your 70 pairs don't share exact wording with any Gotzner et al. (2018) item — traced by hand to a
+      specific Gotzner original where possible (shared word + cross-checked against the actual stimulus image
+      filenames). Gotzner's own paper (§2.1.2.4) lists <b>9 pairs its own polarity diagnostics couldn't classify
+      cleanly</b>: damaged/broken, faulty/non-functional, sleepy/asleep, light/white, dark/black, special/unique,
+      calm/unflappable, tired/exhausted, hungry/starving. <b>4 of your replacements trace back to one of those 9</b>
+      (tagged "ambiguous polarity in Gotzner" below) — a plausible reason for the swap: a forced-choice image task
+      needs an unambiguous intensity direction to draw a clear picture, which those items apparently lacked even
+      for Gotzner's own coders. Gotzner's paper also separately notes they excluded <i>content/unhappy</i> from
+      their own 70 for being off-scale entirely (footnote 3) — general precedent for adjusting a scalar-pair list
+      before running it.
+    </p>
+    <div class="table-wrap">
+      <table class="pairs-table replace-table">
+        <thead>
+          <tr><th>Your pair</th><th>Gotzner original</th><th>What changed</th><th>Category</th></tr>
+        </thead>
+        <tbody id="replacedTableBody"></tbody>
+      </table>
+    </div>
   </div>
   <div id="controlsGrid" class="grid" style="display:none;"></div>
   <div id="emptyMsg" class="empty" style="display:none;">No pairs match.</div>
@@ -206,6 +238,7 @@ function init(){
     document.getElementById("pairsGrid").style.display = activeTab==="pairs" ? "grid" : "none";
     document.getElementById("listWrap").style.display = activeTab==="list" ? "block" : "none";
     document.getElementById("groupsWrap").style.display = activeTab==="groups" ? "block" : "none";
+    document.getElementById("replacedWrap").style.display = activeTab==="replaced" ? "block" : "none";
     document.getElementById("controlsGrid").style.display = activeTab==="controls" ? "grid" : "none";
     const filtersApply = (activeTab==="pairs" || activeTab==="list");
     document.getElementById("filterControls").style.display = filtersApply ? "flex" : "none";
@@ -225,7 +258,32 @@ function init(){
 
   renderControls();
   renderGroups();
+  renderReplaced();
   render();
+}
+
+const CATEGORY_LABEL = {
+  clean_substitution: "Clean substitution",
+  role_reversed: "Role reversed",
+  family_invention: "Family invention",
+  anomaly: "Anomaly — check wording",
+  independent: "Independent addition",
+};
+
+function renderReplaced(){
+  const replaced = DATA.pairs.filter(p => p.replacement);
+  document.getElementById("replacedCount").textContent = replaced.length;
+  document.getElementById("replacedTableBody").innerHTML = replaced.map(p => {
+    const r = p.replacement;
+    const catLabel = CATEGORY_LABEL[r.category] || r.category;
+    const ambig = r.ambiguous_polarity ? `<span class="ambig-tag">ambiguous polarity in Gotzner</span>` : "";
+    return `<tr>
+      <td><b>${p.strong_adj} / ${p.weak_adj}</b></td>
+      <td>${r.gotzner_original || "<em>none found</em>"}</td>
+      <td>${r.changed}</td>
+      <td><span class="cat-pill cat-${r.category}">${catLabel}</span>${ambig}</td>
+    </tr>`;
+  }).join("");
 }
 
 function barColor(pct){
