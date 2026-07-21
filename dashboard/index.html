@@ -160,6 +160,7 @@
     <div class="group-block">
       <h3 class="collapsible-header"><span class="toggle-icon">▾</span> Pairwise correlations vs. Gotzner measures</h3>
       <div class="collapsible-content">
+        <p class="groups-note" style="margin-top:-4px;">SI = scalar implicature rate (does the weak word alone get read as excluding the strong meaning?); NS = negative strengthening rate (does the negated strong word get read as excluding the weak meaning too?); semantic distance = how much stronger raters judged the strong term to be, 1–7.</p>
         <table class="group-table">
           <thead><tr><th>Comparison</th><th class="num">r</th><th class="num">p</th><th class="num">n</th></tr></thead>
           <tbody id="corrTableBody"></tbody>
@@ -343,12 +344,16 @@ function render(){
 
 const GROUP_DIMENSIONS = [
   { key: "extreme",       label: "Extremeness of the strong term",
+    desc: "Gotzner's test: does the strong word take \"downright\" naturally (downright brilliant) the way a non-extreme word doesn't (??downright good)? Extreme words denote a degree outside the normal range.",
     labels: { extreme: "Extreme (e.g. brilliant, freezing, gigantic)", non: "Non-extreme (e.g. good, cold, large)" } },
   { key: "polarity",      label: "Polarity",
+    desc: "Dimensional polarity: does the pair track a larger amount of something (positive, e.g. dirty = more dirt) or a smaller amount (negative, e.g. clean = less dirt)? Not the same as \"good vs. bad.\"",
     labels: { pos: "Positive", neg: "Negative" } },
   { key: "boundedness",   label: "Boundedness of the strong term",
+    desc: "Does the strong word denote a scalar endpoint — natural with \"completely\" (completely clean) — or not (??completely tall, since tallness has no ceiling)?",
     labels: { B: "Bounded (denotes an endpoint)", NB: "Not bounded" } },
   { key: "weak_standard", label: "Standard type of the weak term",
+    desc: "How the weak word's own standard works: minimum (any amount counts, e.g. slightly wet), maximum (an endpoint, rare for a \"weak\" word), or relative (context-dependent, e.g. tall — depends what you're comparing it to).",
     labels: { min: "Minimum standard", rel: "Relative", max: "Maximum standard" } },
 ];
 
@@ -421,6 +426,7 @@ function renderGroups(){
       <div class="group-block">
         <h3 class="collapsible-header"><span class="toggle-icon">▾</span> ${dim.label}</h3>
         <div class="collapsible-content">
+          <p class="groups-note" style="margin-top:-4px;">${dim.desc}</p>
           <table class="group-table">
             <thead><tr><th>Group</th><th class="num">n</th><th class="num">Strong acc</th><th class="num">Weak acc</th><th class="num">Weak overshoot&rarr;strong</th></tr></thead>
             <tbody>${rows}</tbody>
