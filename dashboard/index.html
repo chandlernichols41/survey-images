@@ -69,6 +69,17 @@
   .modal-box{background:#fff; border-radius:14px; max-width:520px; width:100%; max-height:90vh; overflow:auto; padding:18px; position:relative;}
   .modal-close{position:absolute; top:10px; right:14px; font-size:1.3rem; background:none; border:none; cursor:pointer; color:var(--muted);}
 
+  .groups-note{font-size:.82rem; color:var(--muted); margin:0 0 16px;}
+  .group-block{margin-bottom:26px;}
+  .group-block h3{font-size:.95rem; margin:0 0 8px;}
+  .group-table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:.85rem;}
+  .group-table th, .group-table td{padding:8px 14px; text-align:left; border-bottom:1px solid var(--line);}
+  .group-table th{background:var(--bg); font-size:.72rem; text-transform:uppercase; letter-spacing:.03em; color:var(--muted);}
+  .group-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .group-table .mini-bar{display:inline-block; width:70px; height:6px; border-radius:3px; background:var(--line); vertical-align:middle; margin-left:8px; overflow:hidden;}
+  .group-table .mini-bar > div{height:100%;}
+  .group-table tr:last-child td{border-bottom:none;}
+
   @media (max-width:600px){
     .controls{position:static;}
     header{position:static;}
@@ -99,6 +110,7 @@
   <div class="tabs">
     <button class="tab-btn active" data-tab="pairs">Cards (<span id="pairCount">0</span>)</button>
     <button class="tab-btn" data-tab="list">List (<span id="listCount">0</span>)</button>
+    <button class="tab-btn" data-tab="groups">Groups</button>
     <button class="tab-btn" data-tab="controls">Controls (<span id="ctrlCount">0</span>)</button>
   </div>
 </div>
@@ -119,6 +131,10 @@
       </thead>
       <tbody id="pairsTableBody"></tbody>
     </table>
+  </div>
+  <div id="groupsWrap" style="display:none;">
+    <p class="groups-note">Grouped by scale-structure properties from Gotzner, Solt &amp; Benz (2018) — available for <span id="gotznerMatchN">0</span> of <span id="gotznerTotalN">0</span> pairs (the rest use wording not in their norms and are excluded from these breakdowns).</p>
+    <div id="groupsBody"></div>
   </div>
   <div id="controlsGrid" class="grid" style="display:none;"></div>
   <div id="emptyMsg" class="empty" style="display:none;">No pairs match.</div>
@@ -179,6 +195,7 @@ function init(){
     activeTab = b.dataset.tab;
     document.getElementById("pairsGrid").style.display = activeTab==="pairs" ? "grid" : "none";
     document.getElementById("listWrap").style.display = activeTab==="list" ? "block" : "none";
+    document.getElementById("groupsWrap").style.display = activeTab==="groups" ? "block" : "none";
     document.getElementById("controlsGrid").style.display = activeTab==="controls" ? "grid" : "none";
     render();
   }));
@@ -194,6 +211,7 @@ function init(){
   });
 
   renderControls();
+  renderGroups();
   render();
 }
 
@@ -217,6 +235,57 @@ function filteredPairs(){
 function render(){
   if (activeTab === "pairs") renderCards();
   else if (activeTab === "list") renderList();
+}
+
+const GROUP_DIMENSIONS = [
+  { key: "extreme",       label: "Extremeness of the strong term",
+    labels: { extreme: "Extreme (e.g. brilliant, freezing, gigantic)", non: "Non-extreme (e.g. good, cold, large)" } },
+  { key: "polarity",      label: "Polarity",
+    labels: { pos: "Positive", neg: "Negative" } },
+  { key: "boundedness",   label: "Boundedness of the strong term",
+    labels: { B: "Bounded (denotes an endpoint)", NB: "Not bounded" } },
+  { key: "weak_standard", label: "Standard type of the weak term",
+    labels: { min: "Minimum standard", rel: "Relative", max: "Maximum standard" } },
+];
+
+function renderGroups(){
+  const matched = DATA.pairs.filter(p => p.gotzner);
+  document.getElementById("gotznerMatchN").textContent = matched.length;
+  document.getElementById("gotznerTotalN").textContent = DATA.pairs.length;
+
+  const body = document.getElementById("groupsBody");
+  body.innerHTML = GROUP_DIMENSIONS.map(dim => {
+    const buckets = {};
+    matched.forEach(p => {
+      const v = p.gotzner[dim.key];
+      if (v === null || v === undefined) return;
+      (buckets[v] = buckets[v] || []).push(p);
+    });
+    const rows = Object.keys(buckets).sort((a,b) => buckets[b].length - buckets[a].length).map(v => {
+      const arr = buckets[v];
+      const avg = key => {
+        const vals = arr.map(x => x[key]).filter(x => x !== null && x !== undefined);
+        return vals.length ? vals.reduce((a,b)=>a+b,0)/vals.length : null;
+      };
+      const sAcc = avg("strong_acc"), wAcc = avg("weak_acc"), over = avg("weak_pct_overshoot_strong");
+      const label = (dim.labels && dim.labels[v]) ? dim.labels[v] : v;
+      return `<tr>
+        <td>${label}</td>
+        <td class="num">${arr.length}</td>
+        <td class="num">${fmt(sAcc ? Math.round(sAcc*10)/10 : null)}<span class="mini-bar"><div style="width:${sAcc??0}%; background:${barColor(sAcc)}"></div></span></td>
+        <td class="num">${fmt(wAcc ? Math.round(wAcc*10)/10 : null)}<span class="mini-bar"><div style="width:${wAcc??0}%; background:${barColor(wAcc)}"></div></span></td>
+        <td class="num">${fmt(over ? Math.round(over*10)/10 : null)}<span class="mini-bar"><div style="width:${over??0}%; background:${barColor(100-(over??0))}"></div></span></td>
+      </tr>`;
+    }).join("");
+    return `
+      <div class="group-block">
+        <h3>${dim.label}</h3>
+        <table class="group-table">
+          <thead><tr><th>Group</th><th>n</th><th>Strong acc</th><th>Weak acc</th><th>Weak overshoot&rarr;strong</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>`;
+  }).join("");
 }
 
 function renderCards(){
