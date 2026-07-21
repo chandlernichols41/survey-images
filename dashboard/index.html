@@ -123,6 +123,8 @@
       <option value="strong_desc">Strong accuracy: best first</option>
       <option value="pair_asc">Pair accuracy: worst first</option>
       <option value="pair_desc">Pair accuracy: best first</option>
+      <option value="si_asc">Gotzner SI: low first</option>
+      <option value="si_desc">Gotzner SI: high first</option>
       <option value="alpha">Alphabetical</option>
     </select>
     <label><input type="checkbox" id="flaggedOnly"> Flagged only</label>
@@ -147,6 +149,7 @@
           <th class="num" data-key="strong_acc">Strong acc<span class="arrow"></span></th>
           <th class="num" data-key="weak_acc">Weak acc<span class="arrow"></span></th>
           <th class="num" data-key="pair_acc">Pair acc<span class="arrow"></span></th>
+          <th class="num" data-key="gotzner_si">Gotzner SI<span class="arrow"></span></th>
           <th data-key="flag">Flag<span class="arrow"></span></th>
         </tr>
       </thead>
@@ -220,7 +223,11 @@ function pairAcc(p){
 }
 
 function init(){
-  DATA.pairs.forEach(p => { p.pair_acc = pairAcc(p); });
+  DATA.pairs.forEach(p => {
+    p.pair_acc = pairAcc(p);
+    p.gotzner_si = (p.gotzner && p.gotzner.SI !== null && p.gotzner.SI !== undefined)
+      ? Math.round(p.gotzner.SI * 100) : null;
+  });
 
   document.getElementById("meta").textContent =
     `Generated ${new Date(DATA.generated_at).toLocaleString()} · N=${DATA.n_participants} participants`;
@@ -247,6 +254,7 @@ function init(){
       weak_asc: ["weak_acc","asc"], weak_desc: ["weak_acc","desc"],
       strong_asc: ["strong_acc","asc"], strong_desc: ["strong_acc","desc"],
       pair_asc: ["pair_acc","asc"], pair_desc: ["pair_acc","desc"],
+      si_asc: ["gotzner_si","asc"], si_desc: ["gotzner_si","desc"],
       alpha: ["pair","asc"],
     };
     const [key, dir] = map[document.getElementById("sort").value] || ["pair","asc"];
@@ -464,6 +472,8 @@ function renderCards(){
   else if (sortMode === "strong_desc") rows.sort(byNum("strong_acc","desc"));
   else if (sortMode === "pair_asc") rows.sort(byNum("pair_acc","asc"));
   else if (sortMode === "pair_desc") rows.sort(byNum("pair_acc","desc"));
+  else if (sortMode === "si_asc") rows.sort(byNum("gotzner_si","asc"));
+  else if (sortMode === "si_desc") rows.sort(byNum("gotzner_si","desc"));
   else rows.sort((a,b)=>a.pair.localeCompare(b.pair));
 
   const grid = document.getElementById("pairsGrid");
@@ -497,6 +507,7 @@ function renderList(){
       <td class="num">${fmt(p.strong_acc)} <span class="n-count">(n=${p.n_strong})</span><span class="mini-bar"><div style="width:${p.strong_acc ?? 0}%; background:${barColor(p.strong_acc)}"></div></span></td>
       <td class="num">${fmt(p.weak_acc)} <span class="n-count">(n=${p.n_weak})</span><span class="mini-bar"><div style="width:${p.weak_acc ?? 0}%; background:${barColor(p.weak_acc)}"></div></span></td>
       <td class="num">${fmt(p.pair_acc)} <span class="n-count">(n=${p.n_strong + p.n_weak})</span><span class="mini-bar"><div style="width:${p.pair_acc ?? 0}%; background:${barColor(p.pair_acc)}"></div></span></td>
+      <td class="num">${p.gotzner_si !== null ? p.gotzner_si + "%" : "<span class=\"n-count\">—</span>"}</td>
       <td class="flagcell ${p.exclude_candidate ? 'pill-bad' : 'pill-ok'}">${p.exclude_candidate ? p.flag.replace(/_/g,' ').replace(/;/g,' · ') : 'ok'}</td>
     </tr>`).join("");
   document.getElementById("emptyMsg").style.display = rows.length ? "none" : "block";
