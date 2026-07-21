@@ -56,8 +56,9 @@
   table.pairs-table th.active-sort{color:var(--ink);}
   table.pairs-table th.active-sort .arrow{opacity:1;}
   table.pairs-table tbody tr{cursor:pointer;}
-  table.pairs-table tbody tr:hover{background:#f8f9fb;}
-  table.pairs-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  table.pairs-table tbody tr:nth-child(even){background:var(--bg);}
+  table.pairs-table tbody tr:hover{background:#e9eefc;}
+  table.pairs-table td.num, table.pairs-table th.num{text-align:right; font-variant-numeric:tabular-nums;}
   table.pairs-table .mini-bar{display:inline-block; width:60px; height:6px; border-radius:3px; background:var(--line); vertical-align:middle; margin-left:8px; overflow:hidden;}
   table.pairs-table .mini-bar > div{height:100%;}
   td.flagcell{font-size:.72rem;}
@@ -75,7 +76,8 @@
   .group-table{width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; font-size:.85rem;}
   .group-table th, .group-table td{padding:8px 14px; text-align:left; border-bottom:1px solid var(--line);}
   .group-table th{background:var(--bg); font-size:.72rem; text-transform:uppercase; letter-spacing:.03em; color:var(--muted);}
-  .group-table td.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .group-table td.num, .group-table th.num{text-align:right; font-variant-numeric:tabular-nums;}
+  .group-table tbody tr:nth-child(even){background:var(--bg);}
   .group-table .mini-bar{display:inline-block; width:70px; height:6px; border-radius:3px; background:var(--line); vertical-align:middle; margin-left:8px; overflow:hidden;}
   .group-table .mini-bar > div{height:100%;}
   .group-table tr:last-child td{border-bottom:none;}
@@ -136,9 +138,9 @@
         <tr>
           <th data-key="pair">Pair<span class="arrow"></span></th>
           <th data-key="scene">Scene<span class="arrow"></span></th>
-          <th data-key="strong_acc">Strong acc<span class="arrow"></span></th>
-          <th data-key="weak_acc">Weak acc<span class="arrow"></span></th>
-          <th data-key="pair_acc">Pair acc<span class="arrow"></span></th>
+          <th class="num" data-key="strong_acc">Strong acc<span class="arrow"></span></th>
+          <th class="num" data-key="weak_acc">Weak acc<span class="arrow"></span></th>
+          <th class="num" data-key="pair_acc">Pair acc<span class="arrow"></span></th>
           <th data-key="flag">Flag<span class="arrow"></span></th>
         </tr>
       </thead>
@@ -150,7 +152,7 @@
     <div class="group-block">
       <h3>Pairwise correlations vs. Gotzner measures</h3>
       <table class="group-table">
-        <thead><tr><th>Comparison</th><th>r</th><th>p</th><th>n</th></tr></thead>
+        <thead><tr><th>Comparison</th><th class="num">r</th><th class="num">p</th><th class="num">n</th></tr></thead>
         <tbody id="corrTableBody"></tbody>
       </table>
     </div>
@@ -229,7 +231,17 @@ function init(){
   document.getElementById("ctrlCount").textContent = DATA.controls.length;
 
   document.getElementById("search").addEventListener("input", render);
-  document.getElementById("sort").addEventListener("change", render);
+  document.getElementById("sort").addEventListener("change", () => {
+    const map = {
+      weak_asc: ["weak_acc","asc"], weak_desc: ["weak_acc","desc"],
+      strong_asc: ["strong_acc","asc"], strong_desc: ["strong_acc","desc"],
+      pair_asc: ["pair_acc","asc"], pair_desc: ["pair_acc","desc"],
+      alpha: ["pair","asc"],
+    };
+    const [key, dir] = map[document.getElementById("sort").value] || ["pair","asc"];
+    tableSortKey = key; tableSortDir = dir;
+    render();
+  });
   document.getElementById("flaggedOnly").addEventListener("change", render);
   document.querySelectorAll(".tab-btn").forEach(b => b.addEventListener("click", () => {
     document.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));
@@ -363,7 +375,7 @@ function renderGroups(){
       <div class="group-block">
         <h3>${dim.label}</h3>
         <table class="group-table">
-          <thead><tr><th>Group</th><th>n</th><th>Strong acc</th><th>Weak acc</th><th>Weak overshoot&rarr;strong</th></tr></thead>
+          <thead><tr><th>Group</th><th class="num">n</th><th class="num">Strong acc</th><th class="num">Weak acc</th><th class="num">Weak overshoot&rarr;strong</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>`;
