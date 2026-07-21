@@ -331,6 +331,21 @@ const GROUP_DIMENSIONS = [
     labels: { min: "Minimum standard", rel: "Relative", max: "Maximum standard" } },
 ];
 
+const CORR_INTERPRETATION = {
+  "Weak-word accuracy vs. Gotzner SI (scalar implicature rate)":
+    "Pairs where Gotzner's negation task showed a strong “weak implies not-strong” reading are the same pairs where our (negation-free) image task shows better weak-word accuracy — two very different methods pointing at the same underlying property of the scale.",
+  "Weak-word overshoot-to-strong vs. Gotzner SI":
+    "Mirror image of the row above (overshoot ≈ inverse of accuracy), not independent evidence — but reassuring that both directions agree.",
+  "Strong-word accuracy vs. Gotzner semantic distance":
+    "The strongest effect here. When Gotzner's raters judged the weak/strong pair as very different in degree (e.g. cheap/free), our strong and weak images are easy to tell apart and strong-word accuracy is high; semantically close pairs (e.g. sick/ill) make the two images harder to distinguish. Distance doesn't predict weak-word accuracy though (bottom row, n.s.) — that side seems driven more by strong-term extremeness (see the Extremeness grouping below) than by scale distance.",
+};
+
+// Flagged regardless of significance — rows where we expected an effect but didn't get one.
+const CORR_EXPECTED_NOTE = {
+  "Weak-word accuracy vs. Gotzner NS (negative strengthening rate)":
+    "This is the one we expected to land. Gotzner's own paper reports SI and NS as strongly anti-correlated (r=−.62) in their negation-based task, and the whole point of this dashboard's Gotzner comparison is testing whether NS — specifically implicated as a confound in Gotzner's negated-sentence method — still predicts behavior in a task that never uses negation at all. It trends the right direction (r=−.22) but doesn't clear significance here. Most likely just underpowered at n=52; worth re-checking as more participants come in rather than concluding NS doesn't transfer.",
+};
+
 function renderGroups(){
   const matched = DATA.pairs.filter(p => p.gotzner);
   document.getElementById("gotznerMatchN").textContent = matched.length;
@@ -339,12 +354,22 @@ function renderGroups(){
   const corr = DATA.gotzner_correlations || [];
   document.getElementById("corrTableBody").innerHTML = corr.map(c => {
     const sig = c.p < 0.05;
+    let note = "";
+    if (sig && CORR_INTERPRETATION[c.label]) {
+      note = `<tr><td colspan="4" style="background:#f8faff; font-size:.82rem; color:var(--ink); line-height:1.5; padding:10px 14px 14px;">
+                <b>What's likely happening:</b> ${CORR_INTERPRETATION[c.label]}
+              </td></tr>`;
+    } else if (!sig && CORR_EXPECTED_NOTE[c.label]) {
+      note = `<tr><td colspan="4" style="background:#fffaf0; font-size:.82rem; color:var(--ink); line-height:1.5; padding:10px 14px 14px;">
+                <b>Expected this to be significant:</b> ${CORR_EXPECTED_NOTE[c.label]}
+              </td></tr>`;
+    }
     return `<tr>
       <td>${c.label}</td>
       <td class="num">${c.r > 0 ? "+" : ""}${c.r.toFixed(3)}</td>
       <td class="num${sig ? "" : ""}" style="${sig ? "font-weight:700;color:var(--good)" : ""}">${c.p.toFixed(4)}${sig ? " *" : ""}</td>
       <td class="num">${c.n}</td>
-    </tr>`;
+    </tr>${note}`;
   }).join("");
 
   const body = document.getElementById("groupsBody");
