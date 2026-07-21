@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdjNorm QA Dashboard</title>
+<style>
+  :root{
+    --accent:#2563eb; --good:#16a34a; --bad:#dc2626; --warn:#d97706;
+    --ink:#1a1a1a; --muted:#666; --line:#e3e3e8; --card:#fff; --bg:#f4f4f6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;}
+  header{background:#fff; border-bottom:1px solid var(--line); padding:18px 24px; position:sticky; top:0; z-index:5;}
+  header h1{margin:0 0 2px; font-size:1.35rem;}
+  header .meta{color:var(--muted); font-size:.85rem;}
+  .stats{display:flex; gap:14px; margin-top:14px; flex-wrap:wrap;}
+  .stat{background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 14px; min-width:110px;}
+  .stat .n{font-size:1.3rem; font-weight:700;}
+  .stat .lbl{font-size:.75rem; color:var(--muted);}
+  .controls{display:flex; gap:10px; align-items:center; flex-wrap:wrap; padding:14px 24px; background:#fff; border-bottom:1px solid var(--line); position:sticky; top:97px; z-index:4;}
+  .controls input[type=text]{padding:7px 10px; border:1px solid var(--line); border-radius:8px; font-size:.9rem; min-width:220px;}
+  .controls select{padding:7px 10px; border:1px solid var(--line); border-radius:8px; font-size:.9rem;}
+  .controls label{font-size:.85rem; display:flex; align-items:center; gap:5px; color:var(--muted);}
+  .tabs{display:flex; gap:6px; margin-left:auto;}
+  .tab-btn{padding:6px 14px; border-radius:8px; border:1px solid var(--line); background:#fff; cursor:pointer; font-size:.85rem;}
+  .tab-btn.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  main{padding:20px 24px 60px; max-width:1400px; margin:0 auto;}
+  .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(340px,1fr)); gap:16px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px; box-shadow:0 1px 3px rgba(0,0,0,.05);}
+  .card.flagged{border-color:var(--bad); box-shadow:0 0 0 1px var(--bad) inset;}
+  .card-head{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;}
+  .card-title{font-weight:700; font-size:1.05rem;}
+  .card-scene{font-size:.75rem; color:var(--muted);}
+  .imgs{display:flex; gap:6px; margin-bottom:10px;}
+  .imgs .slot{flex:1; text-align:center;}
+  .imgs img{width:100%; aspect-ratio:5/6; object-fit:contain; background:#fafafa; border:1px solid var(--line); border-radius:8px; cursor:zoom-in;}
+  .imgs .role{font-size:.68rem; color:var(--muted); margin-top:3px; text-transform:uppercase; letter-spacing:.03em;}
+  .metrics{font-size:.82rem; line-height:1.5;}
+  .metrics .row{display:flex; justify-content:space-between;}
+  .metrics .bar{height:6px; border-radius:3px; background:var(--line); overflow:hidden; margin:2px 0 6px;}
+  .metrics .bar > div{height:100%;}
+  .badge{display:inline-block; font-size:.7rem; padding:2px 8px; border-radius:10px; margin-top:6px;}
+  .badge.ok{background:#e8f5ec; color:var(--good);}
+  .badge.bad{background:#fdecea; color:var(--bad);}
+  .lightbox{position:fixed; inset:0; background:rgba(0,0,0,.85); display:none; align-items:center; justify-content:center; z-index:20; cursor:zoom-out;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:90vw; max-height:90vh; border-radius:8px;}
+  .empty{text-align:center; color:var(--muted); padding:60px 0;}
+  @media (max-width:600px){
+    .controls{position:static;}
+    header{position:static;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Adjective–Image Norming — QA Dashboard</h1>
+  <div class="meta" id="meta">loading…</div>
+  <div class="stats" id="stats"></div>
+</header>
+
+<div class="controls">
+  <input type="text" id="search" placeholder="Search word or pair…">
+  <select id="sort">
+    <option value="weak_asc">Weak accuracy (worst first)</option>
+    <option value="strong_asc">Strong accuracy (worst first)</option>
+    <option value="alpha">Alphabetical</option>
+  </select>
+  <label><input type="checkbox" id="flaggedOnly"> Flagged only</label>
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="pairs">Pairs (<span id="pairCount">0</span>)</button>
+    <button class="tab-btn" data-tab="controls">Controls (<span id="ctrlCount">0</span>)</button>
+  </div>
+</div>
+
+<main>
+  <div id="pairsGrid" class="grid"></div>
+  <div id="controlsGrid" class="grid" style="display:none;"></div>
+  <div id="emptyMsg" class="empty" style="display:none;">No pairs match.</div>
+</main>
+
+<div class="lightbox" id="lightbox"><img id="lightboxImg"></div>
+
+<script>
+let DATA = null;
+let activeTab = "pairs";
+
+fetch("dashboard_data.json")
+  .then(r => r.json())
+  .then(d => { DATA = d; init(); })
+  .catch(e => { document.getElementById("meta").textContent = "Failed to load dashboard_data.json: " + e; });
+
+function init(){
+  document.getElementById("meta").textContent =
+    `Generated ${new Date(DATA.generated_at).toLocaleString()} · N=${DATA.n_participants} participants`;
+
+  const flagged = DATA.pairs.filter(p => p.exclude_candidate).length;
+  const avg = (arr, key) => {
+    const vals = arr.map(x => x[key]).filter(v => v !== null && v !== undefined);
+    return vals.length ? (vals.reduce((a,b)=>a+b,0)/vals.length).toFixed(1) : "–";
+  };
+  document.getElementById("stats").innerHTML = `
+    <div class="stat"><div class="n">${DATA.pairs.length}</div><div class="lbl">Pairs</div></div>
+    <div class="stat"><div class="n">${flagged}</div><div class="lbl">Flagged</div></div>
+    <div class="stat"><div class="n">${avg(DATA.pairs,'strong_acc')}%</div><div class="lbl">Pooled strong acc</div></div>
+    <div class="stat"><div class="n">${avg(DATA.pairs,'weak_acc')}%</div><div class="lbl">Pooled weak acc</div></div>
+    <div class="stat"><div class="n">${DATA.controls.length}</div><div class="lbl">Control items</div></div>
+  `;
+  document.getElementById("pairCount").textContent = DATA.pairs.length;
+  document.getElementById("ctrlCount").textContent = DATA.controls.length;
+
+  document.getElementById("search").addEventListener("input", render);
+  document.getElementById("sort").addEventListener("change", render);
+  document.getElementById("flaggedOnly").addEventListener("change", render);
+  document.querySelectorAll(".tab-btn").forEach(b => b.addEventListener("click", () => {
+    document.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));
+    b.classList.add("active");
+    activeTab = b.dataset.tab;
+    document.getElementById("pairsGrid").style.display = activeTab==="pairs" ? "grid" : "none";
+    document.getElementById("controlsGrid").style.display = activeTab==="controls" ? "grid" : "none";
+    render();
+  }));
+
+  renderControls();
+  render();
+}
+
+function barColor(pct){
+  if (pct === null || pct === undefined) return var_muted();
+  if (pct >= 75) return "#16a34a";
+  if (pct >= 50) return "#d97706";
+  return "#dc2626";
+}
+function var_muted(){ return "#999"; }
+
+function render(){
+  if (activeTab !== "pairs") return;
+  const q = document.getElementById("search").value.trim().toLowerCase();
+  const sortMode = document.getElementById("sort").value;
+  const flaggedOnly = document.getElementById("flaggedOnly").checked;
+
+  let rows = DATA.pairs.filter(p =>
+    (!q || p.pair.toLowerCase().includes(q) || p.strong_adj.toLowerCase().includes(q) || p.weak_adj.toLowerCase().includes(q)) &&
+    (!flaggedOnly || p.exclude_candidate)
+  );
+
+  if (sortMode === "weak_asc") rows.sort((a,b)=>(a.weak_acc ?? 999)-(b.weak_acc ?? 999));
+  else if (sortMode === "strong_asc") rows.sort((a,b)=>(a.strong_acc ?? 999)-(b.strong_acc ?? 999));
+  else rows.sort((a,b)=>a.pair.localeCompare(b.pair));
+
+  const grid = document.getElementById("pairsGrid");
+  grid.innerHTML = rows.map(cardHtml).join("");
+  document.getElementById("emptyMsg").style.display = rows.length ? "none" : "block";
+  attachImgClicks();
+}
+
+function cardHtml(p){
+  const flagClass = p.exclude_candidate ? "flagged" : "";
+  const badge = p.exclude_candidate
+    ? `<span class="badge bad">${p.flag.replace(/_/g,' ').replace(/;/g,' · ')}</span>`
+    : `<span class="badge ok">ok</span>`;
+  return `
+  <div class="card ${flagClass}">
+    <div class="card-head">
+      <div class="card-title">${p.strong_adj} / ${p.weak_adj}</div>
+      <div class="card-scene">${p.scene}</div>
+    </div>
+    <div class="imgs">
+      ${["neutral","weak","strong"].map(role => `
+        <div class="slot">
+          <img src="${p.images[role]}" loading="lazy" alt="${role}">
+          <div class="role">${role}</div>
+        </div>`).join("")}
+    </div>
+    <div class="metrics">
+      <div class="row"><span>strong word → strong img (n=${p.n_strong})</span><span>${fmt(p.strong_acc)}</span></div>
+      <div class="bar"><div style="width:${p.strong_acc ?? 0}%; background:${barColor(p.strong_acc)}"></div></div>
+      <div class="row"><span>weak word → weak img (n=${p.n_weak})</span><span>${fmt(p.weak_acc)}</span></div>
+      <div class="bar"><div style="width:${p.weak_acc ?? 0}%; background:${barColor(p.weak_acc)}"></div></div>
+      <div class="row"><span>weak word overshoot → strong img</span><span>${fmt(p.weak_pct_overshoot_strong)}</span></div>
+    </div>
+    ${badge}
+  </div>`;
+}
+
+function renderControls(){
+  const grid = document.getElementById("controlsGrid");
+  const rows = [...DATA.controls].sort((a,b)=>(a.acc ?? 999)-(b.acc ?? 999));
+  grid.innerHTML = rows.map(c => `
+    <div class="card ${c.acc !== null && c.acc < 75 ? 'flagged' : ''}">
+      <div class="card-head">
+        <div class="card-title">${c.adj_shown}</div>
+        <div class="card-scene">${c.scene}</div>
+      </div>
+      <div class="imgs">
+        ${Object.entries(c.images).map(([role,url]) => `
+          <div class="slot">
+            <img src="${url}" loading="lazy" alt="${role}">
+            <div class="role">${role}</div>
+          </div>`).join("")}
+      </div>
+      <div class="metrics">
+        <div class="row"><span>attention-check accuracy (n=${c.n})</span><span>${fmt(c.acc)}</span></div>
+        <div class="bar"><div style="width:${c.acc ?? 0}%; background:${barColor(c.acc)}"></div></div>
+      </div>
+    </div>`).join("");
+  attachImgClicks();
+}
+
+function fmt(v){ return (v === null || v === undefined) ? "–" : v + "%"; }
+
+function attachImgClicks(){
+  document.querySelectorAll(".imgs img").forEach(img => {
+    img.onclick = () => {
+      document.getElementById("lightboxImg").src = img.src;
+      document.getElementById("lightbox").classList.add("open");
+    };
+  });
+}
+document.getElementById("lightbox").addEventListener("click", () => {
+  document.getElementById("lightbox").classList.remove("open");
+});
+</script>
+</body>
+</html>
