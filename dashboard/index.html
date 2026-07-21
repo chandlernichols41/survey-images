@@ -80,6 +80,7 @@
   .group-table tbody tr:nth-child(even){background:var(--bg);}
   .group-table .mini-bar{display:inline-block; width:70px; height:6px; border-radius:3px; background:var(--line); vertical-align:middle; margin-left:8px; overflow:hidden;}
   .group-table .mini-bar > div{height:100%;}
+  .n-count{font-size:.72rem; color:var(--muted); font-weight:400;}
   .group-table tr:last-child td{border-bottom:none;}
 
   .replace-table td, .replace-table th{vertical-align:top;}
@@ -428,9 +429,9 @@ function renderList(){
     <tr data-idx="${DATA.pairs.indexOf(p)}">
       <td>${p.strong_adj} / ${p.weak_adj}</td>
       <td>${p.scene}</td>
-      <td class="num">${fmt(p.strong_acc)}<span class="mini-bar"><div style="width:${p.strong_acc ?? 0}%; background:${barColor(p.strong_acc)}"></div></span></td>
-      <td class="num">${fmt(p.weak_acc)}<span class="mini-bar"><div style="width:${p.weak_acc ?? 0}%; background:${barColor(p.weak_acc)}"></div></span></td>
-      <td class="num">${fmt(p.pair_acc)}<span class="mini-bar"><div style="width:${p.pair_acc ?? 0}%; background:${barColor(p.pair_acc)}"></div></span></td>
+      <td class="num">${fmt(p.strong_acc)} <span class="n-count">(n=${p.n_strong})</span><span class="mini-bar"><div style="width:${p.strong_acc ?? 0}%; background:${barColor(p.strong_acc)}"></div></span></td>
+      <td class="num">${fmt(p.weak_acc)} <span class="n-count">(n=${p.n_weak})</span><span class="mini-bar"><div style="width:${p.weak_acc ?? 0}%; background:${barColor(p.weak_acc)}"></div></span></td>
+      <td class="num">${fmt(p.pair_acc)} <span class="n-count">(n=${p.n_strong + p.n_weak})</span><span class="mini-bar"><div style="width:${p.pair_acc ?? 0}%; background:${barColor(p.pair_acc)}"></div></span></td>
       <td class="flagcell ${p.exclude_candidate ? 'pill-bad' : 'pill-ok'}">${p.exclude_candidate ? p.flag.replace(/_/g,' ').replace(/;/g,' · ') : 'ok'}</td>
     </tr>`).join("");
   document.getElementById("emptyMsg").style.display = rows.length ? "none" : "block";
