@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22T13:37:47+00:00",
+ "generated_at": "2026-07-22T13:43:22+00:00",
  "n_participants": 34,
  "base_url": "https://chandlernichols41.github.io/survey-images/",
  "pairs": [
@@ -172,7 +172,15 @@
    "weak_pct_neutral": 8.3,
    "flag": "weak_word_weak_acc; weak_word_overshoots_to_strong",
    "exclude_candidate": true,
-   "gotzner": null,
+   "gotzner": {
+    "extreme": "non",
+    "polarity": "pos",
+    "boundedness": "B",
+    "weak_standard": "rel",
+    "distance": 4.21,
+    "SI": 0.27,
+    "NS": 0.33
+   },
    "replacement": {
     "gotzner_original": "light/white",
     "changed": "Both words swapped (light\u2192bright, white\u2192blinding) \u2014 no literal overlap, but confirmed as the intended replacement for this pair.",
@@ -2139,51 +2147,51 @@
  "gotzner_correlations": [
   {
    "label": "Weak-word accuracy vs. Gotzner SI (scalar implicature rate)",
-   "r": 0.291,
-   "p": 0.0365,
-   "n": 52
+   "r": 0.296,
+   "p": 0.0314,
+   "n": 53
   },
   {
    "label": "Weak-word accuracy vs. Gotzner NS (negative strengthening rate)",
-   "r": -0.25,
-   "p": 0.0742,
-   "n": 52
+   "r": -0.174,
+   "p": 0.214,
+   "n": 53
   },
   {
    "label": "Weak-word overshoot-to-strong vs. Gotzner SI",
-   "r": -0.297,
-   "p": 0.0327,
-   "n": 52
+   "r": -0.302,
+   "p": 0.028,
+   "n": 53
   },
   {
    "label": "Weak-word overshoot-to-strong vs. Gotzner NS",
-   "r": 0.237,
-   "p": 0.0914,
-   "n": 52
+   "r": 0.172,
+   "p": 0.2193,
+   "n": 53
   },
   {
    "label": "Strong-word accuracy vs. Gotzner SI",
-   "r": -0.128,
-   "p": 0.367,
-   "n": 52
+   "r": -0.134,
+   "p": 0.3386,
+   "n": 53
   },
   {
    "label": "Strong-word accuracy vs. Gotzner NS",
-   "r": -0.138,
-   "p": 0.3276,
-   "n": 52
+   "r": -0.166,
+   "p": 0.2336,
+   "n": 53
   },
   {
    "label": "Strong-word accuracy vs. Gotzner semantic distance",
-   "r": 0.499,
-   "p": 0.0002,
-   "n": 52
+   "r": 0.457,
+   "p": 0.0006,
+   "n": 53
   },
   {
    "label": "Weak-word accuracy vs. Gotzner semantic distance",
-   "r": -0.168,
-   "p": 0.2329,
-   "n": 52
+   "r": -0.111,
+   "p": 0.428,
+   "n": 53
   }
  ],
  "old_vs_new": {
