@@ -119,7 +119,7 @@
 </header>
 
 <div class="controls">
-  <div id="filterControls" style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+  <div id="filterControls" style="display:none; gap:10px; align-items:center; flex-wrap:wrap;">
     <input type="text" id="search" placeholder="Search word or pair…">
     <select id="sort">
       <option value="weak_asc">Weak accuracy: worst first</option>
@@ -134,9 +134,10 @@
     </select>
     <label><input type="checkbox" id="flaggedOnly"> Flagged only</label>
   </div>
-  <span id="noFilterNote" style="display:none; font-size:.82rem; color:var(--muted);">(search/sort/flag filters don't apply to this tab)</span>
+  <span id="noFilterNote" style="display:inline; font-size:.82rem; color:var(--muted);">(search/sort/flag filters don't apply to this tab)</span>
   <div class="tabs">
-    <button class="tab-btn active" data-tab="pairs">Cards (<span id="pairCount">0</span>)</button>
+    <button class="tab-btn active" data-tab="info">Info</button>
+    <button class="tab-btn" data-tab="pairs">Cards (<span id="pairCount">0</span>)</button>
     <button class="tab-btn" data-tab="list">List (<span id="listCount">0</span>)</button>
     <button class="tab-btn" data-tab="groups">Gotzner Groups</button>
     <button class="tab-btn" data-tab="replaced">Replaced Pairs (<span id="replacedCount">0</span>)</button>
@@ -145,7 +146,8 @@
 </div>
 
 <main>
-  <div id="pairsGrid" class="grid"></div>
+  <div id="infoWrap"></div>
+  <div id="pairsGrid" class="grid" style="display:none;"></div>
   <div id="listWrap" class="table-wrap" style="display:none;">
     <table class="pairs-table" id="pairsTable">
       <thead>
@@ -213,7 +215,7 @@
 
 <script>
 let DATA = null;
-let activeTab = "pairs";
+let activeTab = "info";
 let tableSortKey = "pair";
 let tableSortDir = "asc";
 
@@ -271,6 +273,7 @@ function init(){
     document.querySelectorAll(".tab-btn").forEach(x=>x.classList.remove("active"));
     b.classList.add("active");
     activeTab = b.dataset.tab;
+    document.getElementById("infoWrap").style.display = activeTab==="info" ? "block" : "none";
     document.getElementById("pairsGrid").style.display = activeTab==="pairs" ? "grid" : "none";
     document.getElementById("listWrap").style.display = activeTab==="list" ? "block" : "none";
     document.getElementById("groupsWrap").style.display = activeTab==="groups" ? "block" : "none";
@@ -295,6 +298,7 @@ function init(){
   renderControls();
   renderGroups();
   renderReplaced();
+  renderInfo();
   render();
 
   document.getElementById("collapseAllBtn").addEventListener("click", () => {
@@ -331,6 +335,78 @@ function renderReplaced(){
       <td><span class="cat-pill cat-${r.category}">${catLabel}</span>${ambig}</td>
     </tr>`;
   }).join("");
+}
+
+function renderInfo(){
+  const ovn = DATA.old_vs_new;
+  const ovnBlock = ovn ? `
+    <div class="group-block">
+      <h3>How this compares to the original (Qualtrics slider) study</h3>
+      <p class="groups-note">
+        The original version of this study ran in Qualtrics: participants saw one word and only
+        <b>two</b> images (weak and strong, no neutral baseline) and rated between them on a slider.
+        This version replaces that with a <b>three-image forced choice</b> (neutral / weak / strong)
+        specifically because the slider design had a problem: participants very rarely chose the
+        weak/middle option for a weak word — they tended to slide toward the extreme regardless of
+        which word was shown. Comparing the ${ovn.shared_pairs} pairs both studies have in common:
+      </p>
+      <table class="group-table">
+        <thead><tr><th></th><th class="num">Strong word &rarr; strong image</th><th class="num">Weak word &rarr; weak image</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>OLD (slider, 2 images)</td>
+            <td class="num">${ovn.old_strong_pct}%<span class="mini-bar"><div style="width:${ovn.old_strong_pct}%; background:${barColor(ovn.old_strong_pct)}"></div></span></td>
+            <td class="num">${ovn.old_weak_pct}%<span class="mini-bar"><div style="width:${ovn.old_weak_pct}%; background:${barColor(ovn.old_weak_pct)}"></div></span></td>
+          </tr>
+          <tr>
+            <td>NEW (forced choice, 3 images)</td>
+            <td class="num">${ovn.new_strong_pct}%<span class="mini-bar"><div style="width:${ovn.new_strong_pct}%; background:${barColor(ovn.new_strong_pct)}"></div></span></td>
+            <td class="num">${ovn.new_weak_pct}%<span class="mini-bar"><div style="width:${ovn.new_weak_pct}%; background:${barColor(ovn.new_weak_pct)}"></div></span></td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="groups-note" style="margin-top:10px;">
+        Weak-word accuracy roughly tripled (${ovn.old_weak_pct}% &rarr; ${ovn.new_weak_pct}%) on the exact
+        same items, while strong-word accuracy stayed high in both. That's consistent with the slider
+        having been a task-design problem rather than participants genuinely failing to understand weak
+        adjectives: a two-option slider with no neutral anchor biases people toward the extreme end, and
+        adding a third, forced-choice option mostly fixes it.
+      </p>
+    </div>` : "";
+
+  document.getElementById("infoWrap").innerHTML = `
+    <div class="group-block">
+      <h3>What this study is</h3>
+      <p class="groups-note">
+        This is a norming study for scalar adjective pairs — a weak word and a strong word describing
+        the same scale (e.g. <i>warm</i> / <i>hot</i>, <i>tall</i> / <i>giant</i>). On each trial,
+        participants see <b>one word</b> and <b>three images</b> of the same scene — a neutral baseline,
+        a mild/weak version, and an extreme/strong version — in a random left/center/right order, and
+        click whichever image best matches the word. The key thing being tested: the most extreme image
+        is <b>not always the right answer</b> — a weak word (like "warm") should map to the mild image,
+        not the extreme one, and this dashboard exists to check how well that's actually happening,
+        pair by pair.
+      </p>
+      <p class="groups-note">
+        Currently live with <b>${DATA.n_participants} participants</b> across <b>${DATA.pairs.length} pairs</b>
+        (plus ${DATA.controls.length} attention-check control items) split across 4 counterbalanced
+        versions, so no one participant sees both members of a scale-mate pair or a shared word twice.
+      </p>
+    </div>
+    ${ovnBlock}
+    <div class="group-block">
+      <h3>What's in this dashboard</h3>
+      <table class="group-table">
+        <tbody>
+          <tr><td style="width:160px;"><b>Cards</b></td><td>Every pair's three images side by side with accuracy bars — click a card to enlarge.</td></tr>
+          <tr><td><b>List</b></td><td>The same data as a sortable/searchable table, including Gotzner's SI rating per pair — click a row to see the images.</td></tr>
+          <tr><td><b>Gotzner Groups</b></td><td>How our results correlate with Gotzner, Solt &amp; Benz's (2018) published norms for the same words, broken down by scale-structure properties (extremeness, polarity, boundedness, standard type).</td></tr>
+          <tr><td><b>Replaced Pairs</b></td><td>The 18 pairs whose wording doesn't exactly match Gotzner's norms, mapped by hand to what they were likely adapted from and why.</td></tr>
+          <tr><td><b>Controls</b></td><td>The attention-check items (pick the named object) used to flag inattentive participants.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  `;
 }
 
 function barColor(pct){

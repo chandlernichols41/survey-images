@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22T03:08:58+00:00",
+ "generated_at": "2026-07-22T13:26:02+00:00",
  "n_participants": 34,
  "base_url": "https://chandlernichols41.github.io/survey-images/",
  "pairs": [
@@ -2185,5 +2185,12 @@
    "p": 0.2329,
    "n": 52
   }
- ]
+ ],
+ "old_vs_new": {
+  "shared_pairs": 69,
+  "old_strong_pct": 90.3,
+  "old_weak_pct": 23.8,
+  "new_strong_pct": 76.0,
+  "new_weak_pct": 69.8
+ }
 }
