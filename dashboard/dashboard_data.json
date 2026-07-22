@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-07-22T13:26:02+00:00",
+ "generated_at": "2026-07-22T13:37:47+00:00",
  "n_participants": 34,
  "base_url": "https://chandlernichols41.github.io/survey-images/",
  "pairs": [
@@ -174,10 +174,10 @@
    "exclude_candidate": true,
    "gotzner": null,
    "replacement": {
-    "gotzner_original": null,
-    "changed": "No shared word with any Gotzner pair. Hypothesis only: may replace Gotzner's light/white, one of the 9 pairs their own paper couldn't classify for polarity \u2014 unconfirmed.",
-    "category": "independent",
-    "ambiguous_polarity": null
+    "gotzner_original": "light/white",
+    "changed": "Both words swapped (light\u2192bright, white\u2192blinding) \u2014 no literal overlap, but confirmed as the intended replacement for this pair.",
+    "category": "clean_substitution",
+    "ambiguous_polarity": true
    }
   },
   {
